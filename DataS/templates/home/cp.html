@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,html{
+            width:100%;
+        }
+        *{
+            padding:0;
+            margin:0;
+            text-align: center;
+        }
+        .clearBox:after{
+            clear: both;
+            height: 0;
+            visibility: hidden;
+            content: "";
+            display: block;
+        }
+        .clearBox{
+            *zoom:1
+        }
+        .boxDiv{
+            width:98%;
+            margin:20px auto;
+        }
+        ul{
+            width:100%;
+
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+
+        }
+        ul li{
+            width:15%;
+            box-sizing: border-box;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            height: 30px ;
+            line-height: 30px;
+            list-style: none;
+            float: left;
+        }
+        .tableTitle{
+            font-weight: bolder;
+        }
+        .info{
+            width:60% !important;
+        }
+        .level{
+            width:10% !important;
+        }
+    </style>
+</head>
+<body>
+{{table_li}}</br>
+{% for table in table_li %}
+表名：{{table.table_name}}</br>
+库类：{{table.db_type}}</br>
+表类：{{table.table_type}}</br>
+描述：{{table.desc}}</br>
+{% endfor %}
+    <div class="boxDiv">
+        <ul class="clearBox">
+            <li class="level tableTitle">级别</li>
+            <li class="tableTitle">字段名</li>
+            <li class="tableTitle">字段类型</li>
+            <li class="info tableTitle">注释</li>
+
+            {% for clo in clos %}
+            <li class="level ">{{clo.level}}</li>
+            <li class="">{{clo.clo_name}}</li>
+            <li class="">{{clo.field_type}}</li>
+            <li class="info ">{{clo.comment}}</li>
+            {% endfor %}
+
+
+            <li class="level ">tableName</li>
+            <li class="">userName</li>
+            <li class="">string</li>
+            <li class="info ">用户名称</li>
+
+        </ul>
+
+    </div>
+</body>
+</html>
