@@ -62,7 +62,7 @@
 				<li>
 					<div class="prize">$ {{ book }}</div>
 					{% for table in rn_table_hot %}
-					<h4><a href="#">{{ table }}</a></h4>
+					<h4><a href="{% url 'home:detail' table_id=table.table_id %}">{{ table }}</a></h4>
 					{% endfor %}
 				</li>
 				<li>
