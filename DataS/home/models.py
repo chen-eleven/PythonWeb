@@ -65,7 +65,7 @@ class Tables(BaseModel):
     tableStatus_choices = ((k,v) for k,v in tableStatus.items())
     dbType_choices = ((k,v) for k,v in dbType.items())
 
-    table_id = models.IntegerField(verbose_name='表id')    
+    table_id = models.IntegerField(verbose_name='表id',primary_key=True)    
     table_name =models.CharField(max_length=50, verbose_name='表名')
     db_name = models.CharField(max_length=10,verbose_name='表的库名')        
     table_type = models.CharField(default='other', max_length=10, verbose_name='表业务类型')
@@ -92,7 +92,8 @@ class TableDetailsManager(models.Manager):
 
 class TableDetails(BaseModel):
     """子级表详细信息"""
-    table_id = models.IntegerField( verbose_name='tableid', )
+    #table_id = models.IntegerField( verbose_name='tableid', )
+    table_id = models.ForeignKey(Tables, verbose_name='tableid', on_delete=models.CASCADE)
     clo_id = models.SmallIntegerField( verbose_name='列id')
     clo_name = models.CharField(max_length=20,verbose_name='列名')
     field_type = models.CharField(max_length=10,verbose_name='字段类型')

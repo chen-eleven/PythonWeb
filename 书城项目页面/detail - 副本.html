@@ -77,12 +77,11 @@
 	</div>
 
 	<div class="book_detail_con clearfix">
-		<div class="book_detail_pic fl"><img src="images/book_detail.jpg"></div>
+<!--		<div class="book_detail_pic fl"><img src="images/book_detail.jpg"></div> -->
 
-		<div class="book_detail_list fr">
+		<div class="book_detail_list f1">
 			<h3>hik_cloud2_segment_tbl_hist</h3>
-			<p>云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表
-			云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表</p>
+			<p>云录像文件信息表云录像文件信息表云录像文件信息表云录像文件信息表云录像文件</p>
 			<div class="prize_bar">
 				<span class="show_pirze">：<em>云录像文件信息表</em></span>
 				<span class="show_unit">单  位：册</span>
@@ -91,6 +90,7 @@
 	</div>
 
 	<div class="main_wrap clearfix">
+		<!--
 		<div class="l_wrap fl clearfix">
 			<div class="new_book">
 				<h3>新品推荐</h3>
@@ -108,8 +108,9 @@
 				</ul>
 			</div>
 		</div>
-
-		<div class="r_wrap fr clearfix">
+-->
+		<div class="r_wrap f1 clearfix">
+			<!-- 这里可用f1或者fr控制居左或者居右	-->		
 			<ul class="detail_tab clearfix">
 				<li class="active">表介绍</li>
 				<li>评论</li>
@@ -117,8 +118,40 @@
 
 			<div class="tab_content">
 				<dl>
-					<dt>商品详情：</dt>
-					<dd>《计算机程序设计艺术》系列是公认的计算机科学领域经典之作，深入阐述了程序设计理论，对计算机领域的发展有着极为深远的影响。本书是该系列的第 1 卷，讲解基本算法，其中包含了其他各卷都需用到的基本内容。本卷从基本概念开始，然后讲述信息结构，并辅以大量的习题及答案。 </dd>
+					<dt>字段详情：</dt>
+					<dd>/*改写表格*/ </dd>
+
+						<table class="Modbus">
+							<thead>
+							<tr>
+								<th>Num</th>
+								<th>Address</th>
+								<th>Type</th>
+								<th>Data</th>                 
+							</tr>	
+							</thead>
+                            <tr>
+                                <td class="item1">1</td>
+                                <td class="item2">0x01</td>
+                                <td class="item3">unsigned int</td>
+                                <td class="item4">0x0001</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0x02</td>
+                                <td>unsigned int</td>
+                                <td>0x0002</td>
+                            </tr>
+                             <tr>
+                                <td class="qitem1">1</td>
+                                <td class="qitem2">0x01</td>
+                                <td class="qitem3">unsigned int</td>
+                                <td class="qitem4">0x0001</td>
+                            </tr>                           
+                        </table>
+
+
+              
 				</dl>
 			</div>
 
