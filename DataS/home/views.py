@@ -28,7 +28,7 @@ def detail(request, table_id):
     '''显示表的详情页面'''
     # 获取业务表的详情信息
     clos = TableDetails.objects.get_table_by_id(table_id=table_id)
-    table = Tables.objects.get_table_by_id(table_id=table_id)
+    table = Tables.objects.get_table_by_id(table_id=table_id)[0]
 
 
     if clos is None or table is None:
@@ -53,8 +53,8 @@ def detail(request, table_id):
     
 
     # 定义上下文
-    context = {'clos': clos, 'table_li':table}
+    context = {'clos': clos, 'table':table}
 
     # 使用模板
-    return render(request, 'home/cp.html', context)
+    return render(request, 'home/detail.html', context)
     

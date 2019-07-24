@@ -41,9 +41,10 @@ class HotTables(BaseModel):
     
     objects =HotTablesManager()
     
+
     def __str__(self):
         return self.table_name
-    
+
     class Meta:
         db_table = 's_hot_tables'
         verbose_name = '常用表'

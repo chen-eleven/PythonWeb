@@ -95,50 +95,44 @@ $(function () {
 	</div>
 
 	<div class="book_detail_con clearfix">
-		<div class="book_detail_pic fl"><img src="{% static books.image.url %}"></div>
 
-		<div class="book_detail_list fr">
-			<h3>{{ books.name }}</h3>
-			<p>{{ books.desc }}</p>
+		<div class="book_detail_list f1">
+			<h3>{{ table.table_name }}</h3>
+			<p>{{ table.desc }}</p>
 			<div class="prize_bar">
 				<span class="show_pirze">¥<em>{{ books.price }}</em></span>
 				<span class="show_unit">单  位：{{ books.unit }}</span>
-			</div>
-			<div class="book_num clearfix">
-				<div class="num_name fl">数 量：</div>
-				<div class="num_add fl">
-					<input type="text" class="num_show fl" value="1">
-					<a href="javascript:;" class="add fr">+</a>
-					<a href="javascript:;" class="minus fr">-</a>	
-				</div> 
-			</div>
-			<div class="total">总价：<em>100元</em></div>
-			<div class="operate_btn">
-                {% csrf_token %}
-				<a href="javascript:;" class="buy_btn">立即购买</a>
-				<a href="javascript:;" books_id="{{ books.id }}" class="add_cart" id="add_cart">加入购物车</a>
-				<a href="#" id="write-comment" class="comment">我要写评论</a>
-			</div>
+			</div> 
 		</div>
+
+
+						<table class="Modbus">
+							<thead>
+							<tr>
+								<th>Num</th>
+								<th>Address</th>
+								<th>Type</th>
+								<th>Data</th>                 
+							</tr>	
+							</thead>
+							{% for clo in clos %}
+                            <tr>
+                                <td class="item1">{{clo.level}}</td>
+                                <td class="item2">{{clo.clo_name}}</td>
+                                <td class="item3">{{clo.field_type}}</td>
+                                <td class="item4">{{clo.comment}}</td>
+                            </tr> 
+							{% endfor %}
+                        			
+						
+						
+						</table>	
+		
+
 	</div>
 
 	<div class="main_wrap clearfix">
-		<div class="l_wrap fl clearfix">
-			<div class="new_book">
-				<h3>新品推荐</h3>
-				<ul>
-                    {% for book in books_li %}
-					<li>
-						<a href="{% url 'books:detail' books_id=books.id %}"><img src="{% static book.image.url %}"></a>
-						<h4><a href="{% url 'books:detail' books_id=books.id %}">{{ book.name }}</a></h4>
-						<div class="prize">￥{{ book.price }}</div>
-					</li>
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-
-		<div class="r_wrap fr clearfix">
+		<div class="r_wrap f1 clearfix">
 			<ul class="detail_tab clearfix">
 				<li class="active" id="detail">商品介绍</li>
 				<li id="comment">评论</li>
@@ -186,7 +180,7 @@ $(function () {
 	})
 
 	$('#write-comment').click(function() {
-		window.open("{% url 'comment:comment' book_id=books.id %}")
+		window.open("http://www.baidu.com")
 	})
 </script>
     <style type="text/css">

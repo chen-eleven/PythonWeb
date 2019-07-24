@@ -9,7 +9,7 @@ class TablesFilter(admin.ModelAdmin):
         model = TableDetails
         extra = 5 #默认显示条目的数量
     inlines = [TableDetailsInline,]    #Inline把BillSubInline关联进来    
-    list_display = ['table_name','db_name',]
+    list_display = ['table_name','db_name','table_type']
      
     #筛选器
     list_filter =['db_name', 'db_type'] #过滤器
