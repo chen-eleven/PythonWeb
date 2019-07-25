@@ -12,7 +12,7 @@ class HotTablesManager(models.Manager):
         if sort == 'length':
             order_by = ('table_name',)
         else:
-            order_by('-create_time',)
+            order_by('-tabel_name',)
         
         # 查询数据
         hotTablse_li = self.filter(table_subtype=table_subtype).order_by(*order_by)

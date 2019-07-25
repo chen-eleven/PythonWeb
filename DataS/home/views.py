@@ -4,7 +4,10 @@ from django_redis import get_redis_connection
 
 from .models import HotTables
 from .models import Tables,TableDetails
+from django.views.decorators.cache import cache_page
 # Create your views here.
+
+@cache_page(60 * 15)
 def index(request):
     '''显示首页'''
     '''查询四个类型的表'''
@@ -29,6 +32,16 @@ def detail(request, table_id):
     # 获取业务表的详情信息
     clos = TableDetails.objects.get_table_by_id(table_id=table_id)
     table = Tables.objects.get_table_by_id(table_id=table_id)[0]
+    
+    #将颜色标签替换掉
+    clos_tmp = []
+    for i in clos:
+        if i.level == 1:
+            i.level ="yellow"
+        else:
+            i.level ="white"
+        clos_tmp.append(i)
+    
 
 
     if clos is None or table is None:
@@ -53,7 +66,7 @@ def detail(request, table_id):
     
 
     # 定义上下文
-    context = {'clos': clos, 'table':table}
+    context = {'clos': clos_tmp, 'table':table}
 
     # 使用模板
     return render(request, 'home/detail.html', context)

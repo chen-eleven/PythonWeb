@@ -65,23 +65,23 @@ $(function () {
 	<div class="navbar_con">
 		<div class="navbar clearfix">
 			<div class="subnav_con fl">
-				<h1>全部商品分类</h1>	
+				<h1>全部模块分类</h1>	
 				<span></span>			
 				<ul class="subnav">
-					<li><a href="#" class="python">Python</a></li>
-					<li><a href="#" class="javascript">Javascript</a></li>
-					<li><a href="#" class="algorithms">数据结构与算法</a></li>
-					<li><a href="#" class="machinelearning">机器学习</a></li>
-					<li><a href="#" class="operatingsystem">操作系统</a></li>
-					<li><a href="#" class="database">数据库</a></li>
+					<li><a href="#" class="python">业务块1</a></li>
+					<li><a href="#" class="javascript">业务块2</a></li>
+					<li><a href="#" class="algorithms">业务块3</a></li>
+					<li><a href="#" class="machinelearning">业务块4</a></li>
+					<li><a href="#" class="operatingsystem">业务块5</a></li>
+					<li><a href="#" class="database">业务块6</a></li>
 				</ul>
 			</div>
 			<ul class="navlist fl">
-				<li><a href="">首页</a></li>
+				<li><a href="{% url 'home:index' %}">首页</a></li>
 				<li class="interval">|</li>
-				<li><a href="">移动端书城</a></li>
+				<li><a href="">链接1</a></li>
 				<li class="interval">|</li>
-				<li><a href="">秒杀</a></li>
+				<li><a href="http://localhost:8000/admin/">链接2</a></li>
 			</ul>
 		</div>
 	</div>
@@ -89,9 +89,9 @@ $(function () {
 	<div class="breadcrumb">
 		<a href="#">全部分类</a>
 		<span>></span>
-		<a href="#">Python</a>
+		<a href="#">业务块1</a>
 		<span>></span>
-		<a href="#">商品详情</a>
+		<a href="#">表详情</a>
 	</div>
 
 	<div class="book_detail_con clearfix">
@@ -100,8 +100,9 @@ $(function () {
 			<h3>{{ table.table_name }}</h3>
 			<p>{{ table.desc }}</p>
 			<div class="prize_bar">
-				<span class="show_pirze">¥<em>{{ books.price }}</em></span>
-				<span class="show_unit">单  位：{{ books.unit }}</span>
+				<span class="show_pirze">库：<em>{{ table.db_name }}</em></span>
+				<span class="show_unit">库类：{{ table.db_type }}</span>
+				<span class="show_unit">业务：{{ table.table_type }}</span>
 			</div> 
 		</div>
 
@@ -110,15 +111,15 @@ $(function () {
 							<thead>
 							<tr>
 								<th>Num</th>
-								<th>Address</th>
+								<th>clomun</th>
 								<th>Type</th>
-								<th>Data</th>                 
+								<th>comment</th>                 
 							</tr>	
 							</thead>
 							{% for clo in clos %}
                             <tr>
-                                <td class="item1">{{clo.level}}</td>
-                                <td class="item2">{{clo.clo_name}}</td>
+                                <td class="item1">{{clo.id}}</td>
+                                <td class="item2" bgcolor={{clo.level}}>{{clo.clo_name}}</td>
                                 <td class="item3">{{clo.field_type}}</td>
                                 <td class="item4">{{clo.comment}}</td>
                             </tr> 
@@ -134,14 +135,14 @@ $(function () {
 	<div class="main_wrap clearfix">
 		<div class="r_wrap f1 clearfix">
 			<ul class="detail_tab clearfix">
-				<li class="active" id="detail">商品介绍</li>
-				<li id="comment">评论</li>
+				<li class="active" id="detail">备注</li>
+				<li id="write-comment" class="comment" >写备注</li>
 			</ul>
 
 			<div class="tab_content">
 				<dl id="book_detail">
-					<dt>商品详情：</dt>
-					<dd>{{ books.detail | safe }}</dd>
+					<dt>备注：</dt>
+					<dd>{#books.detail | safe #}表里的userid不全，应采用uid</dd>
 				</dl>
 				<dl id="book_comment">
 				</dl>
@@ -191,7 +192,7 @@ $(function () {
             position: relative;
             z-index: 10;
             display: inline-block;
-            width: 178px;
+            width: 78px;
             height: 38px;
             border: 1px solid #c40000;
             font-size: 14px;
