@@ -58,7 +58,11 @@ class TablesManager(models.Manager):
         table = self.filter(table_id=table_id)       
         # 对查询结果集进行限制h
         return table
-                
+    def get_tables_by_type(self, db_name=str, sort='table_name'):
+        # 查询数据
+        table = self.filter(db_name=db_name).order_by(sort) 
+        # 对查询结果集进行限制h
+        return table                
     
 
 class Tables(BaseModel):

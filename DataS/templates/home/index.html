@@ -53,7 +53,7 @@
 				    <a href="#">{{ book}}</a>
                 {% endfor %}
 			</div>
-			<a href="#" class="book_more fr">查看更多 ></a>
+			<a href="{% url 'home:list' db_name=1 page_id=1 %}" class="book_more fr">查看更多 ></a>
 		</div>
 
 		<div class="book_con clearfix">

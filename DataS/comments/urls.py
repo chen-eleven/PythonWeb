@@ -4,5 +4,5 @@ from comments import views
 
 app_name = 'comments'
 urlpatterns = [
-    re_path('(?P<table_id>[0-9]+)/', views.new_comment, name='comment'), # 评论内容
+    #re_path('(?P<table_id>[0-9]+)/', views.new_comment, name='comment'), # 评论内容
     ]

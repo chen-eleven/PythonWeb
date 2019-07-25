@@ -71,3 +71,68 @@ def detail(request, table_id):
     # 使用模板
     return render(request, 'home/detail.html', context)
     
+
+# 商品种类 页码 排序方式
+# /list/(种类id)/(页码)/?sort=排序方式
+from django.core.paginator import Paginator
+
+def list(request, db_name, page):
+    '''商品列表页面'''
+    # 获取排序方式
+    #sort = request.GET.get('sort', 'default')
+
+    # 判断type_id是否合法
+# =============================================================================
+#     if int(type_id) not in BOOKS_TYPE.keys():
+#         return redirect(reverse('books:index'))
+# 
+# =============================================================================
+    # 根据商品种类id和排序方式查询数据
+    books_li = Tables.objects.get_tables_by_type(db_name='dwa',)
+
+    # 分页
+    paginator = Paginator(books_li, 1)
+
+    # 获取分页之后的总页数
+    num_pages = paginator.num_pages
+
+    # 取第page页数据
+    if page == '' or int(page) > num_pages:
+        page = 1
+    else:
+        page = int(page)
+
+    # 返回值是一个Page类的实例对象
+    tables_li = paginator.page(page)
+
+    # 进行页码控制
+    # 1.总页数<5, 显示所有页码
+    # 2.当前页是前3页，显示1-5页
+    # 3.当前页是后3页，显示后5页 10 9 8 7 6
+    # 4.其他情况，显示当前页前2页，后2页，当前页
+    if num_pages < 5:
+        pages = range(1, num_pages+1)
+    elif page <= 3:
+        pages = range(1, 6)
+    elif num_pages - page <= 2:
+        pages = range(num_pages-4, num_pages+1)
+    else:
+        pages = range(page-2, page+3)
+
+    # 新品推荐
+    #books_new = Books.objects.get_books_by_type(db_name=db_name, limit=2, sort='new')
+
+    # 定义上下文
+    #type_title = BOOKS_TYPE[int(type_id)]
+    context = {
+        'tables_li': tables_li,
+        #'books_new': books_new,
+        #'type_id': type_id,
+        'db_name' : db_name,
+        'sort': 'table_name',
+        'type_title': 'debug',
+        'pages': pages
+    }
+
+    # 使用模板
+    return render(request, 'home/list.html', context)

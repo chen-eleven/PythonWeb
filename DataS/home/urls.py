@@ -13,5 +13,7 @@ urlpatterns = [
         path('', views.index, name='index'),   # 首页
         #re_path('tables/10003/', views.detail, name='detail'), # 详情页
         re_path('home/(?P<table_id>[0-9]+)/', views.detail, name='detail'), # 详情页
+        # 这里整形和strin后期要矫正
+        re_path(r'list/(?P<db_name>\d+)/(?P<page>\d+)/$', views.list, name='list'),
         
         ]
