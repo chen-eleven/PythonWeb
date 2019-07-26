@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}尚硅谷书店-商品列表{% endblock title %}
+{% block title %}矩阵-列表{% endblock title %}
 {% block topfiles %}
 {% endblock topfiles %}
 {% block body %}
@@ -20,7 +20,7 @@
 				</ul>
 			</div>
 			<ul class="navlist fl">
-				<li><a href="">首页</a></li>
+				<li><a href={% url 'home:index'%}>首页</a></li>
 				<li class="interval">|</li>
 				<li><a href="">链接1</a></li>
 				<li class="interval">|</li>
@@ -38,15 +38,14 @@
 	<div class="main_wrap clearfix">
 		<div class="l_wrap fl clearfix">
 			<div class="new_book">
-				<h3>新品推荐</h3>
+				<h3>库名</h3>
 				<ul>
-                    {% for book in books_new %}
+  
 					<li>
-						<a href="{#% url 'books:detail' books_id=book.id %#}"><img src="{% static book.image.url %}"></a>
-						<h4><a href="{#% url 'books:detail' books_id=book.id %#}">{{ book.name }}</a></h4>
-						<div class="prize">￥{{ book.price }}</div>
+						<h4><a href="{#% url 'books:detail' books_id=book.id %#}">vfdzvd</a></h4>
+						<div class="prize">${{db_name}}</div>
 					</li>
-					{% endfor %}
+
 				</ul>
 			</div>
 		</div>
@@ -64,8 +63,8 @@
                         <a href="{#% url 'books:detail' books_id=book.id %#}"></a>
                         <h4><a href="{% url 'home:detail' table_id=table_i.table_id %}">{{ table_i.table_name }}</a></h4>
                         <div class="operate">
-                            <span class="prize">${{ table_i.db_name }}</span>
-                            <span class="unit">{{ book.unit }}</span>
+                            <span class="prize">${{ table_i.desc }}</apan>
+                            <span class="unit">{{ table_i.debug }}</span>
                             <a href="#" class="add_books" title="加入购物车"></a>
                         </div>
                     </li>
@@ -73,18 +72,18 @@
 			</ul>
 
 			<div class="pagenation">
-                {% if books_li.has_previous %}
-				    <a href="/list/{{ type_id }}/{{ books_li.previous_page_number }}/?sort={{ sort }}"><上一页</a>
+                {% if tables_li.has_previous %}
+				    <a href="/list/{{ type_id }}/{{ tables_li.previous_page_number }}/?sort={{ sort }}"><上一页</a>
                 {% endif %}
                 {% for pindex in pages %}
-                    {% if pindex == books_li.number %}
+                    {% if pindex == tables_li.number %}
                         <a href="/list/{{ type_id }}/{{ pindex }}/?sort={{ sort }}" class="active">{{ pindex }}</a>
                     {% else %}
                         <a href="/list/{{ type_id }}/{{ pindex }}/?sort={{ sort }}">{{ pindex }}</a>
                     {% endif %}
                 {% endfor %}
-                {% if books_li.has_next %}
-				    <a href="/list/{{ type_id }}/{{ books_li.next_page_number }}/?sort={{ sort }}">下一页></a>
+                {% if tables_li.has_next %}
+				    <a href="/list/{{ type_id }}/{{ tables_li.next_page_number }}/?sort={{ sort }}">下一页></a>
                 {% endif %}
 			</div>
 		</div>

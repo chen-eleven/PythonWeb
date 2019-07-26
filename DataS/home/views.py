@@ -5,9 +5,10 @@ from django_redis import get_redis_connection
 from .models import HotTables
 from .models import Tables,TableDetails
 from django.views.decorators.cache import cache_page
+from utils.decorators import login_required
 # Create your views here.
-
-@cache_page(60 * 15)
+@login_required
+#@cache_page(60 * 15)
 def index(request):
     '''显示首页'''
     '''查询四个类型的表'''
@@ -27,6 +28,7 @@ def index(request):
     # 使用loger session
     return render(request, 'home/index.html', context)
 
+@login_required
 def detail(request, table_id):
     '''显示表的详情页面'''
     # 获取业务表的详情信息
@@ -76,6 +78,7 @@ def detail(request, table_id):
 # /list/(种类id)/(页码)/?sort=排序方式
 from django.core.paginator import Paginator
 
+@login_required
 def list(request, db_name, page):
     '''商品列表页面'''
     # 获取排序方式
@@ -91,7 +94,7 @@ def list(request, db_name, page):
     books_li = Tables.objects.get_tables_by_type(db_name='dwa',)
 
     # 分页
-    paginator = Paginator(books_li, 1)
+    paginator = Paginator(books_li, 10)
 
     # 获取分页之后的总页数
     num_pages = paginator.num_pages
@@ -127,8 +130,8 @@ def list(request, db_name, page):
     context = {
         'tables_li': tables_li,
         #'books_new': books_new,
-        #'type_id': type_id,
-        'db_name' : db_name,
+        'type_id': 1,
+        'db_name' : 'dwa',
         'sort': 'table_name',
         'type_title': 'debug',
         'pages': pages
