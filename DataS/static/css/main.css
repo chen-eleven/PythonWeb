@@ -95,12 +95,12 @@ html,body{height:100%}
 .subnav li a{display:block;height:44px;line-height:44px;text-indent:71px;font-size:14px;color:#333}
 .subnav li a:hover{color:#ff8800}
 
-.subnav li .python{background:url(../images/icons.png) 28px 0px no-repeat;}
-.subnav li .javascript{background:url(../images/icons.png) 28px -43px no-repeat;}
-.subnav li .algorithms{background:url(../images/icons.png) 28px -86px no-repeat;}
-.subnav li .machinelearning{background:url(../images/icons.png) 28px -132px no-repeat;}
-.subnav li .operatingsystem{background:url(../images/icons.png) 28px -174px no-repeat;}
-.subnav li .database{background:url(../images/icons.png) 28px -220px no-repeat;}
+.subnav li .model1{background:url(../images/icons.png) 28px 0px no-repeat;}
+.subnav li .model2{background:url(../images/icons.png) 28px -43px no-repeat;}
+.subnav li .model3{background:url(../images/icons.png) 28px -86px no-repeat;}
+.subnav li .model4{background:url(../images/icons.png) 28px -132px no-repeat;}
+.subnav li .model5{background:url(../images/icons.png) 28px -174px no-repeat;}
+.subnav li .model6{background:url(../images/icons.png) 28px -220px no-repeat;}
 
 
 .slide{width:760px;height:270px;position:relative;overflow:hidden;}
@@ -172,7 +172,7 @@ html,body{height:100%}
 .r_wrap{width:980px;}
 
 
-/* 新品推荐样式 */
+/* 库名样式 */
 
 .new_book{
 	border:1px solid #ededed;
@@ -187,9 +187,10 @@ html,body{height:100%}
 .new_book ul{width:160px;margin:0 auto;overflow:hidden;}
 .new_book li{border-bottom:1px solid #ededed;margin-bottom:-1px;}
 .new_book li img{display:block;width:150px;height:150px;margin:10px auto;}
-.new_book li h4{width:160px;margin:0 auto;}
-.new_book li h4 a{font-weight:normal;color:#666;display:block;width:160px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-.new_book li .prize{font-size:19px;color:#da260e;margin:10px auto;}
+.new_book li h4{width:160px;margin:5 auto;}
+.new_book li .using{font-size:19px;color:#da260e;margin:10px auto;}
+.new_book li h4 a{font-weight:bold;color:#666;display:block;width:160px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
 
 
 

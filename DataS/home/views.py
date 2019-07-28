@@ -6,6 +6,10 @@ from .models import HotTables
 from .models import Tables,TableDetails
 from django.views.decorators.cache import cache_page
 from utils.decorators import login_required
+import logging
+
+logger = logging.getLogger('django.request')
+
 # Create your views here.
 @login_required
 #@cache_page(60 * 15)
@@ -23,12 +27,13 @@ def index(request):
             'report_table_hot' : report_table_hot,
             }
        
-    
-    
-    # 使用loger session
+    # 使用loger session 
+    logger.info(request.session['username'])
+    logger.info(request.body)
+
     return render(request, 'home/index.html', context)
 
-@login_required
+#@login_required
 def detail(request, table_id):
     '''显示表的详情页面'''
     # 获取业务表的详情信息
@@ -78,8 +83,8 @@ def detail(request, table_id):
 # /list/(种类id)/(页码)/?sort=排序方式
 from django.core.paginator import Paginator
 
-@login_required
-def list(request, db_name, page):
+#@login_required
+def list(request, db_type, db_name, page):
     '''商品列表页面'''
     # 获取排序方式
     #sort = request.GET.get('sort', 'default')
@@ -91,8 +96,9 @@ def list(request, db_name, page):
 # 
 # =============================================================================
     # 根据商品种类id和排序方式查询数据
-    books_li = Tables.objects.get_tables_by_type(db_name='dwa',)
-
+    books_li = Tables.objects.get_tables_by_type(db_type=db_type,db_name=db_name,)
+    # 获取去重的所有库名，列在list页左边
+    db_name_all = Tables.objects.get_db_name_all(db_type)
     # 分页
     paginator = Paginator(books_li, 10)
 
@@ -129,9 +135,10 @@ def list(request, db_name, page):
     #type_title = BOOKS_TYPE[int(type_id)]
     context = {
         'tables_li': tables_li,
+        'db_name_all':db_name_all,
         #'books_new': books_new,
-        'type_id': 1,
-        'db_name' : 'dwa',
+        'db_type': db_type,
+        'db_name' : db_name,
         'sort': 'table_name',
         'type_title': 'debug',
         'pages': pages
@@ -139,3 +146,10 @@ def list(request, db_name, page):
 
     # 使用模板
     return render(request, 'home/list.html', context)
+
+
+def  more(request,code):
+    code_dict = {1:'您可能没有权限用您提供的凭据核验进入。。。',
+               2:'该域名可能还处于开发中。。。'}
+    context =  {'msg':code_dict[int(code)]}
+    return render(request, 'more/more.html',context)

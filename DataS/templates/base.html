@@ -81,14 +81,14 @@
 		<p>电话：010-*****10    Matrix不需要备案</p>
 	</div>
     {# 获取用户购物车中商品的数目 #}
-    {% block cart_count %}
+<!--     {% block cart_count %}
         <script>
             $.get('/cart/count/', function (data) {
                 // {'res':商品的总数}
                 $('#show_count').html(data.res)
             })
         </script>
-    {% endblock cart_count %}
+    {% endblock cart_count %} -->
     {# 网页底部html元素块 #}
     {% block bottom %}{% endblock bottom %}
     {# 网页底部引入文件块 #}

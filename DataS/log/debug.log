@@ -1,0 +1,39 @@
+ERROR 2019-07-28 22:36:06,117 log 10600 1304 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\utils\decorators.py", line 11, in wrapper
+    return view_func(request, *view_args, **view_kwargs)
+  File "F:\github\PythonWeb\DataS\home\views.py", line 31, in index
+    logger.info(request.session.username)
+AttributeError: 'SessionStore' object has no attribute 'username'
+ERROR 2019-07-28 22:36:06,117 log 10600 1304 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\utils\decorators.py", line 11, in wrapper
+    return view_func(request, *view_args, **view_kwargs)
+  File "F:\github\PythonWeb\DataS\home\views.py", line 31, in index
+    logger.info(request.session.username)
+AttributeError: 'SessionStore' object has no attribute 'username'
+ERROR 2019-07-28 22:36:06,121 basehttp 10600 1304 "GET / HTTP/1.1" 500 74654
+INFO 2019-07-28 22:36:45,910 views 12460 8180 test
+INFO 2019-07-28 22:36:45,910 views 12460 8180 test
+INFO 2019-07-28 22:36:45,954 basehttp 12460 8180 "GET / HTTP/1.1" 200 6391
+WARNING 2019-07-28 22:36:45,984 basehttp 12460 13240 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-28 22:36:47,770 basehttp 12460 9076 "GET /home/10029/ HTTP/1.1" 200 7654
+WARNING 2019-07-28 22:36:48,079 basehttp 12460 496 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-28 22:38:03,715 views 7276 3532 test
+INFO 2019-07-28 22:38:03,715 views 7276 3532 test
+INFO 2019-07-28 22:38:03,715 views 7276 3532 b''
+INFO 2019-07-28 22:38:03,715 views 7276 3532 b''
+INFO 2019-07-28 22:38:03,762 basehttp 7276 3532 "GET / HTTP/1.1" 200 6391
+WARNING 2019-07-28 22:38:03,779 basehttp 7276 14148 "GET /static/css/bulma.css HTTP/1.1" 404 1663

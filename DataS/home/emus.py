@@ -24,3 +24,10 @@ tableStatus = {
         0 : '下线',
         1 : '正常',
         2 : '其他异常'}
+
+db_name_all = {
+        'hive': ['da', 'daetst', 'date', 'datest', 'dwa', 'omn',
+                 'report', 'stage', 'test'],
+        'mysql' : ['ad','datest', 'dwa', 'report','stage', 'test'],
+        'otherdb' : []
+        }

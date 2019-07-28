@@ -1,0 +1,3 @@
+{{ object.table_name }} # 根据表的名称建立索引
+{{ object.desc }} # 根据表的描述建立索引
+{{ object.tabledetails_set.first().comment }} # 根据表子表注释来建立索引子表（自动小写)_set

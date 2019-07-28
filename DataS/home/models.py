@@ -4,6 +4,7 @@ from tinymce.models import HTMLField
 # Create your models here.
 from db.base_model import BaseModel
 from home.emus import hotTableTypes,tableStatus,dbType
+from home.emus import db_name_all
 
 
 class HotTablesManager(models.Manager):
@@ -58,11 +59,17 @@ class TablesManager(models.Manager):
         table = self.filter(table_id=table_id)       
         # 对查询结果集进行限制h
         return table
-    def get_tables_by_type(self, db_name=str, sort='table_name'):
+    def get_tables_by_type(self,db_type=1, db_name=str, sort='table_name'):
         # 查询数据
-        table = self.filter(db_name=db_name).order_by(sort) 
+        table = self.filter(db_type=db_type).filter(db_name=db_name).order_by(sort) 
         # 对查询结果集进行限制h
-        return table                
+        return table
+    def get_db_name_all(self,db_type='hive'):
+        """获取去重所有库名"""
+        #因为库不易变动，还是直接写死成一个文件，不浪费数据库IO、
+        return db_name_all[db_type]
+        
+                
     
 
 class Tables(BaseModel):
