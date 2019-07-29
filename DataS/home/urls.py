@@ -15,6 +15,6 @@ urlpatterns = [
         re_path('home/(?P<table_id>[0-9]+)/', views.detail, name='detail'), # 详情页
         # 这里整形和strin后期要矫正
         re_path(r'list/(?P<db_type>\w+)/(?P<db_name>\w+)/(?P<page>\d+)/$', views.list, name='list'),
-        re_path('home/more/(?P<code>\d+)/', views.more, name='more')
+        re_path('home/more/(?P<code>\d+)/', views.more, name='more'),
         
         ]

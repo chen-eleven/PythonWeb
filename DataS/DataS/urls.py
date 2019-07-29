@@ -22,4 +22,5 @@ urlpatterns = [
     path('user/', include('users.urls', namespace='user')),
     path('comment/', include('comments.urls', namespace='comment')),
     re_path(r'^search/', include('haystack.urls')),
+    path('report/', include('report.urls', namespace='report')),
 ]

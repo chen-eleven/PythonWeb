@@ -37,3 +37,599 @@ INFO 2019-07-28 22:38:03,715 views 7276 3532 b''
 INFO 2019-07-28 22:38:03,715 views 7276 3532 b''
 INFO 2019-07-28 22:38:03,762 basehttp 7276 3532 "GET / HTTP/1.1" 200 6391
 WARNING 2019-07-28 22:38:03,779 basehttp 7276 14148 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:08:57,912 views 14936 15172 test
+INFO 2019-07-29 23:08:57,912 views 14936 15172 test
+INFO 2019-07-29 23:08:57,913 views 14936 15172 b''
+INFO 2019-07-29 23:08:57,913 views 14936 15172 b''
+INFO 2019-07-29 23:08:58,022 basehttp 14936 15172 "GET / HTTP/1.1" 200 6391
+INFO 2019-07-29 23:08:58,067 basehttp 14936 11856 "GET /static/css/reset.css HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,067 basehttp 14936 13792 "GET /static/css/main.css HTTP/1.1" 304 0
+WARNING 2019-07-29 23:08:58,375 basehttp 14936 7340 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:08:58,375 basehttp 14936 13232 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,450 basehttp 14936 10456 "GET /static/js/jquery-ui.min.js HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,451 basehttp 14936 8456 "GET /static/js/slide.js HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,473 basehttp 14936 14588 "GET /static/images/slide.jpg HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,474 basehttp 14936 6556 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,757 basehttp 14936 8208 "GET /static/images/icons.png HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,818 basehttp 14936 5872 "GET /static/images/slide03.jpg HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,819 basehttp 14936 4900 "GET /static/images/slide04.jpg HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,820 basehttp 14936 6676 "GET /static/images/slide02.jpg HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,822 basehttp 14936 12684 "GET /static/images/adv01.jpg HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:58,823 basehttp 14936 5128 "GET /static/images/adv02.jpg HTTP/1.1" 304 0
+INFO 2019-07-29 23:08:59,064 basehttp 14936 9268 "GET /static/images/banner01.jpg HTTP/1.1" 304 0
+WARNING 2019-07-29 23:08:59,130 log 14936 3860 Not Found: /favicon.ico
+WARNING 2019-07-29 23:08:59,130 log 14936 3860 Not Found: /favicon.ico
+WARNING 2019-07-29 23:08:59,131 basehttp 14936 3860 "GET /favicon.ico HTTP/1.1" 404 3176
+INFO 2019-07-29 23:08:59,751 basehttp 14936 5164 "GET /home/more/2/ HTTP/1.1" 200 164
+INFO 2019-07-29 23:10:48,665 basehttp 14936 1204 "GET /home/more/2/ HTTP/1.1" 200 164
+INFO 2019-07-29 23:10:52,472 basehttp 14936 14612 "GET /home/more/2/ HTTP/1.1" 200 164
+INFO 2019-07-29 23:10:54,818 basehttp 14936 9528 "GET /home/more/2/ HTTP/1.1" 200 164
+INFO 2019-07-29 23:10:56,268 basehttp 14936 4944 "GET /home/more/2/ HTTP/1.1" 200 164
+INFO 2019-07-29 23:11:20,216 basehttp 14936 14792 "GET /home/more/2/ HTTP/1.1" 200 164
+INFO 2019-07-29 23:11:25,332 views 14936 9200 test
+INFO 2019-07-29 23:11:25,332 views 14936 9200 test
+INFO 2019-07-29 23:11:25,332 views 14936 9200 b''
+INFO 2019-07-29 23:11:25,332 views 14936 9200 b''
+INFO 2019-07-29 23:11:25,348 basehttp 14936 9200 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:11:25,364 basehttp 14936 5776 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:11:27,489 log 14936 5244 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 7, in bar
+    render(request, 'echart.html')
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: echart.html
+ERROR 2019-07-29 23:11:27,489 log 14936 5244 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 7, in bar
+    render(request, 'echart.html')
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: echart.html
+ERROR 2019-07-29 23:11:27,491 basehttp 14936 5244 "GET /report/bitest/ HTTP/1.1" 500 82783
+INFO 2019-07-29 23:11:59,745 views 11192 14624 test
+INFO 2019-07-29 23:11:59,745 views 11192 14624 test
+INFO 2019-07-29 23:11:59,746 views 11192 14624 b''
+INFO 2019-07-29 23:11:59,746 views 11192 14624 b''
+INFO 2019-07-29 23:11:59,770 basehttp 11192 14624 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:11:59,785 basehttp 11192 5828 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:12:01,207 log 11192 4752 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 7, in bar
+    render(request, 'echarts.html')
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: echarts.html
+ERROR 2019-07-29 23:12:01,207 log 11192 4752 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 7, in bar
+    render(request, 'echarts.html')
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: echarts.html
+ERROR 2019-07-29 23:12:01,210 basehttp 11192 4752 "GET /report/bitest/ HTTP/1.1" 500 82586
+INFO 2019-07-29 23:13:33,370 views 11284 5248 test
+INFO 2019-07-29 23:13:33,370 views 11284 5248 test
+INFO 2019-07-29 23:13:33,371 views 11284 5248 b''
+INFO 2019-07-29 23:13:33,371 views 11284 5248 b''
+INFO 2019-07-29 23:13:33,395 basehttp 11284 5248 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:13:33,411 basehttp 11284 9896 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:13:34,571 log 11284 10664 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:13:34,571 log 11284 10664 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:13:34,573 basehttp 11284 10664 "GET /report/bitest/ HTTP/1.1" 500 60080
+INFO 2019-07-29 23:14:22,145 views 9784 12984 test
+INFO 2019-07-29 23:14:22,145 views 9784 12984 test
+INFO 2019-07-29 23:14:22,145 views 9784 12984 b''
+INFO 2019-07-29 23:14:22,145 views 9784 12984 b''
+INFO 2019-07-29 23:14:22,170 basehttp 9784 12984 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:14:22,188 basehttp 9784 7964 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:14:23,109 log 9784 8908 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:14:23,109 log 9784 8908 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:14:23,111 basehttp 9784 8908 "GET /report/bitest/ HTTP/1.1" 500 60146
+ERROR 2019-07-29 23:14:37,196 log 5912 11960 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:14:37,196 log 5912 11960 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:14:37,198 basehttp 5912 11960 "GET /report/bitest/ HTTP/1.1" 500 60215
+ERROR 2019-07-29 23:14:40,674 log 5912 6660 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:14:40,674 log 5912 6660 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:14:40,676 basehttp 5912 6660 "GET /report/bitest/ HTTP/1.1" 500 60080
+INFO 2019-07-29 23:15:23,597 views 7096 14528 test
+INFO 2019-07-29 23:15:23,597 views 7096 14528 test
+INFO 2019-07-29 23:15:23,597 views 7096 14528 b''
+INFO 2019-07-29 23:15:23,597 views 7096 14528 b''
+INFO 2019-07-29 23:15:23,620 basehttp 7096 14528 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:15:23,637 basehttp 7096 12596 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:15:24,318 log 7096 4124 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:15:24,318 log 7096 4124 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:15:24,320 basehttp 7096 4124 "GET /report/bitest/ HTTP/1.1" 500 60080
+INFO 2019-07-29 23:16:52,097 views 7284 7568 test
+INFO 2019-07-29 23:16:52,097 views 7284 7568 test
+INFO 2019-07-29 23:16:52,097 views 7284 7568 b''
+INFO 2019-07-29 23:16:52,097 views 7284 7568 b''
+INFO 2019-07-29 23:16:52,122 basehttp 7284 7568 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:16:52,139 basehttp 7284 15352 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:16:53,130 log 7284 8936 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:16:53,130 log 7284 8936 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:16:53,132 basehttp 7284 8936 "GET /report/bitest/ HTTP/1.1" 500 59948
+INFO 2019-07-29 23:17:08,763 views 4068 14560 test
+INFO 2019-07-29 23:17:08,763 views 4068 14560 test
+INFO 2019-07-29 23:17:08,763 views 4068 14560 b''
+INFO 2019-07-29 23:17:08,763 views 4068 14560 b''
+INFO 2019-07-29 23:17:08,789 basehttp 4068 14560 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:17:08,808 basehttp 4068 5500 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:17:09,616 log 4068 5952 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:17:09,616 log 4068 5952 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:17:09,618 basehttp 4068 5952 "GET /report/bitest/ HTTP/1.1" 500 60079
+INFO 2019-07-29 23:18:56,216 views 4776 11476 test
+INFO 2019-07-29 23:18:56,216 views 4776 11476 test
+INFO 2019-07-29 23:18:56,216 views 4776 11476 b''
+INFO 2019-07-29 23:18:56,216 views 4776 11476 b''
+INFO 2019-07-29 23:18:56,239 basehttp 4776 11476 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:18:56,255 basehttp 4776 6292 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:18:58,066 basehttp 4776 7648 "GET /list/hive/da/1/ HTTP/1.1" 200 5536
+WARNING 2019-07-29 23:18:58,083 basehttp 4776 9332 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:18:58,280 basehttp 4776 4108 "GET /static/images/down.png HTTP/1.1" 304 0
+ERROR 2019-07-29 23:19:00,038 log 4776 3984 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:19:00,038 log 4776 3984 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:19:00,040 basehttp 4776 3984 "GET /report/bitest/ HTTP/1.1" 500 60079
+INFO 2019-07-29 23:19:59,734 views 8308 14188 test
+INFO 2019-07-29 23:19:59,734 views 8308 14188 test
+INFO 2019-07-29 23:19:59,734 views 8308 14188 b''
+INFO 2019-07-29 23:19:59,734 views 8308 14188 b''
+INFO 2019-07-29 23:19:59,757 basehttp 8308 14188 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:19:59,773 basehttp 8308 7424 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:20:01,247 log 8308 11068 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 7, in bar
+    render(request, 'report/a.html', context)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: report/a.html
+ERROR 2019-07-29 23:20:01,247 log 8308 11068 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 7, in bar
+    render(request, 'report/a.html', context)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: report/a.html
+ERROR 2019-07-29 23:20:01,249 basehttp 8308 11068 "GET /report/bitest/ HTTP/1.1" 500 82629
+ERROR 2019-07-29 23:20:50,204 log 7132 8248 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:20:50,204 log 7132 8248 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view report.views.bar didn't return an HttpResponse object. It returned None instead.
+ERROR 2019-07-29 23:20:50,205 basehttp 7132 8248 "GET /report/bitest/ HTTP/1.1" 500 60014
+INFO 2019-07-29 23:21:31,515 basehttp 14484 13968 "GET /report/bitest/ HTTP/1.1" 200 14
+INFO 2019-07-29 23:21:48,923 basehttp 11856 3428 "GET /report/bitest/ HTTP/1.1" 200 1706
+INFO 2019-07-29 23:21:55,130 basehttp 11856 11396 "GET /report/bitest/ HTTP/1.1" 200 1706
+INFO 2019-07-29 23:21:58,034 basehttp 11856 10440 "GET /report/bitest/ HTTP/1.1" 200 1706
+INFO 2019-07-29 23:25:40,853 basehttp 4228 13664 "GET /report/bitest/ HTTP/1.1" 200 1706
+INFO 2019-07-29 23:25:54,714 basehttp 4228 252 "GET /report/bitest/ HTTP/1.1" 200 1686
+INFO 2019-07-29 23:25:57,155 basehttp 4228 2744 "GET /report/bitest/ HTTP/1.1" 200 1686
+INFO 2019-07-29 23:26:09,415 basehttp 4228 5912 "GET /report/bitest/ HTTP/1.1" 200 1688
+INFO 2019-07-29 23:26:53,727 basehttp 4228 12116 "GET /report/bitest/ HTTP/1.1" 200 1710
+INFO 2019-07-29 23:27:36,616 basehttp 4432 7352 "GET /report/bitest/ HTTP/1.1" 200 1710
+INFO 2019-07-29 23:27:40,415 basehttp 4432 13048 "GET /report/bitest/ HTTP/1.1" 200 1710
+INFO 2019-07-29 23:27:42,142 basehttp 4432 13556 "GET /report/bitest/ HTTP/1.1" 200 1710
+INFO 2019-07-29 23:27:47,365 views 4432 12548 test
+INFO 2019-07-29 23:27:47,365 views 4432 12548 test
+INFO 2019-07-29 23:27:47,365 views 4432 12548 b''
+INFO 2019-07-29 23:27:47,365 views 4432 12548 b''
+INFO 2019-07-29 23:27:47,386 basehttp 4432 12548 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:27:47,406 basehttp 4432 8784 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:27:48,406 basehttp 4432 15268 "GET /report/bitest/ HTTP/1.1" 200 1710
+INFO 2019-07-29 23:28:08,513 views 14884 14988 test
+INFO 2019-07-29 23:28:08,513 views 14884 14988 test
+INFO 2019-07-29 23:28:08,514 views 14884 14988 b''
+INFO 2019-07-29 23:28:08,514 views 14884 14988 b''
+INFO 2019-07-29 23:28:08,540 basehttp 14884 14988 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:28:08,558 basehttp 14884 11948 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:28:09,600 basehttp 14884 13464 "GET /report/bitest/ HTTP/1.1" 200 39
+INFO 2019-07-29 23:29:04,287 basehttp 14884 14684 "GET /report/bitest/ HTTP/1.1" 200 41
+WARNING 2019-07-29 23:29:05,846 basehttp 14884 532 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:29:08,959 basehttp 14884 1188 "GET /report/bitest/ HTTP/1.1" 200 41
+INFO 2019-07-29 23:29:44,432 basehttp 9940 14376 "GET /report/bitest/ HTTP/1.1" 200 1712
+INFO 2019-07-29 23:29:50,546 basehttp 9940 3348 "GET /report/bitest/ HTTP/1.1" 200 1712
+INFO 2019-07-29 23:32:29,026 basehttp 8724 4040 "GET /report/bitest/ HTTP/1.1" 200 1777
+INFO 2019-07-29 23:33:09,530 basehttp 8724 5420 "GET /report/bitest/ HTTP/1.1" 200 1777
+INFO 2019-07-29 23:33:19,211 basehttp 8724 10420 "GET /report/bitest/ HTTP/1.1" 200 1777
+WARNING 2019-07-29 23:34:47,193 basehttp 8724 14636 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:34:49,585 basehttp 8724 8080 "GET /report/bitest/ HTTP/1.1" 200 1777
+INFO 2019-07-29 23:36:41,874 basehttp 8724 10644 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:36:41,902 log 8724 4976 Not Found: /report/bitest/Table.css
+WARNING 2019-07-29 23:36:41,902 log 8724 4976 Not Found: /report/bitest/Table.css
+WARNING 2019-07-29 23:36:41,903 basehttp 8724 4976 "GET /report/bitest/Table.css HTTP/1.1" 404 3278
+INFO 2019-07-29 23:37:29,361 basehttp 8724 10212 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:37:29,382 log 8724 10552 Not Found: /report/bitest/Table.css
+WARNING 2019-07-29 23:37:29,382 log 8724 10552 Not Found: /report/bitest/Table.css
+WARNING 2019-07-29 23:37:29,383 basehttp 8724 10552 "GET /report/bitest/Table.css HTTP/1.1" 404 3278
+INFO 2019-07-29 23:37:33,465 views 8724 10316 test
+INFO 2019-07-29 23:37:33,465 views 8724 10316 test
+INFO 2019-07-29 23:37:33,465 views 8724 10316 b''
+INFO 2019-07-29 23:37:33,465 views 8724 10316 b''
+INFO 2019-07-29 23:37:33,486 basehttp 8724 10316 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:37:33,503 basehttp 8724 12656 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:37:34,375 basehttp 8724 10636 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:37:34,411 log 8724 4284 Not Found: /report/bitest/Table.css
+WARNING 2019-07-29 23:37:34,411 log 8724 4284 Not Found: /report/bitest/Table.css
+WARNING 2019-07-29 23:37:34,413 basehttp 8724 4284 "GET /report/bitest/Table.css HTTP/1.1" 404 3278
+INFO 2019-07-29 23:38:49,206 basehttp 8724 9856 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:38:49,248 log 8724 9624 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:38:49,248 log 8724 9624 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:38:49,249 basehttp 8724 9624 "GET /report/bitest/table.css HTTP/1.1" 404 3278
+INFO 2019-07-29 23:38:52,341 views 8724 192 test
+INFO 2019-07-29 23:38:52,341 views 8724 192 test
+INFO 2019-07-29 23:38:52,341 views 8724 192 b''
+INFO 2019-07-29 23:38:52,341 views 8724 192 b''
+INFO 2019-07-29 23:38:52,358 basehttp 8724 192 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:38:52,375 basehttp 8724 1148 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:38:53,249 basehttp 8724 10288 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:38:53,270 log 8724 12992 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:38:53,270 log 8724 12992 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:38:53,271 basehttp 8724 12992 "GET /report/bitest/table.css HTTP/1.1" 404 3278
+INFO 2019-07-29 23:41:23,401 basehttp 8724 14384 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:41:23,422 log 8724 6012 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:41:23,422 log 8724 6012 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:41:23,423 basehttp 8724 6012 "GET /report/bitest/table.css HTTP/1.1" 404 3278
+WARNING 2019-07-29 23:41:24,294 log 8724 10560 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:41:24,294 log 8724 10560 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:41:24,295 basehttp 8724 10560 "GET /report/bitest/table.css HTTP/1.1" 404 3278
+INFO 2019-07-29 23:41:26,894 basehttp 8724 7132 "GET /report/bitest/ HTTP/1.1" 200 3409
+WARNING 2019-07-29 23:41:26,913 log 8724 2136 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:41:26,913 log 8724 2136 Not Found: /report/bitest/table.css
+WARNING 2019-07-29 23:41:26,914 basehttp 8724 2136 "GET /report/bitest/table.css HTTP/1.1" 404 3278
+WARNING 2019-07-29 23:43:38,483 basehttp 8724 5156 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:43:42,341 views 8724 11396 test
+INFO 2019-07-29 23:43:42,341 views 8724 11396 test
+INFO 2019-07-29 23:43:42,341 views 8724 11396 b''
+INFO 2019-07-29 23:43:42,341 views 8724 11396 b''
+INFO 2019-07-29 23:43:42,357 basehttp 8724 11396 "GET / HTTP/1.1" 200 6393
+WARNING 2019-07-29 23:43:42,372 basehttp 8724 12360 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+ERROR 2019-07-29 23:43:44,295 log 8724 8140 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 9, in bar
+    return render(request, 'report/echarts.html', context)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 534, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'static'. Did you forget to register or load this tag?
+ERROR 2019-07-29 23:43:44,295 log 8724 8140 Internal Server Error: /report/bitest/
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\github\PythonWeb\DataS\report\views.py", line 9, in bar
+    return render(request, 'report/echarts.html', context)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\chen\Anaconda3\lib\site-packages\django\template\base.py", line 534, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'static'. Did you forget to register or load this tag?
+ERROR 2019-07-29 23:43:44,300 basehttp 8724 8140 "GET /report/bitest/ HTTP/1.1" 500 137660
+INFO 2019-07-29 23:44:56,245 basehttp 8724 12284 "GET /report/bitest/ HTTP/1.1" 200 3421
+INFO 2019-07-29 23:44:56,273 basehttp 8724 15240 "GET /static/css/table.css HTTP/1.1" 200 2250
+INFO 2019-07-29 23:45:38,484 basehttp 8724 1548 "GET /report/bitest/ HTTP/1.1" 200 3422
+INFO 2019-07-29 23:45:49,180 basehttp 8724 14888 "GET /report/bitest/ HTTP/1.1" 200 3422
+INFO 2019-07-29 23:45:49,197 basehttp 8724 9516 "GET /static/css/table.css HTTP/1.1" 200 2250
+INFO 2019-07-29 23:47:29,949 basehttp 8724 9056 "GET /report/bitest/ HTTP/1.1" 200 3410
+INFO 2019-07-29 23:47:33,393 basehttp 8724 10988 "GET /report/bitest/ HTTP/1.1" 200 3410
+INFO 2019-07-29 23:48:03,219 basehttp 8724 7668 "GET /report/bitest/ HTTP/1.1" 200 3412
+INFO 2019-07-29 23:49:56,946 basehttp 8724 2260 "GET /report/bitest/ HTTP/1.1" 200 3413
+INFO 2019-07-29 23:50:24,209 basehttp 8724 13060 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-29 23:52:32,052 basehttp 8724 9984 "GET /report/bitest/ HTTP/1.1" 200 3442
+INFO 2019-07-29 23:52:44,377 basehttp 8724 4156 "GET /report/bitest/ HTTP/1.1" 200 3442
+INFO 2019-07-29 23:52:44,411 basehttp 8724 1500 "GET /static/css/table.css HTTP/1.1" 200 2250
+INFO 2019-07-29 23:53:38,548 basehttp 8724 6488 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-29 23:53:40,794 basehttp 8724 380 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-29 23:56:15,620 basehttp 8724 8056 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-29 23:56:32,285 views 8724 7812 test
+INFO 2019-07-29 23:56:32,285 views 8724 7812 test
+INFO 2019-07-29 23:56:32,285 views 8724 7812 b''
+INFO 2019-07-29 23:56:32,285 views 8724 7812 b''
+INFO 2019-07-29 23:56:32,314 basehttp 8724 7812 "GET / HTTP/1.1" 200 6393
+INFO 2019-07-29 23:56:32,337 basehttp 8724 12084 "GET /static/css/reset.css HTTP/1.1" 200 664
+INFO 2019-07-29 23:56:32,552 basehttp 8724 6448 "GET /static/css/main.css HTTP/1.1" 200 25066
+WARNING 2019-07-29 23:56:32,652 basehttp 8724 4072 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:56:32,676 basehttp 8724 10664 "GET /static/js/slide.js HTTP/1.1" 200 2473
+INFO 2019-07-29 23:56:32,690 basehttp 8724 11408 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97168
+INFO 2019-07-29 23:56:32,695 basehttp 8724 6728 "GET /static/js/jquery-ui.min.js HTTP/1.1" 200 71001
+INFO 2019-07-29 23:56:32,703 basehttp 8724 6148 "GET /static/images/logo.png HTTP/1.1" 200 56559
+INFO 2019-07-29 23:56:32,868 basehttp 8724 11752 "GET /static/images/banner01.jpg HTTP/1.1" 200 17575
+WARNING 2019-07-29 23:56:35,431 basehttp 8724 512 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-29 23:56:35,442 basehttp 8724 10208 "GET /static/images/slide.jpg HTTP/1.1" 200 46959
+INFO 2019-07-29 23:56:35,507 basehttp 8724 12116 "GET /static/images/slide02.jpg HTTP/1.1" 200 29641
+INFO 2019-07-29 23:56:35,511 basehttp 8724 12508 "GET /static/images/slide03.jpg HTTP/1.1" 200 131141
+INFO 2019-07-29 23:56:35,526 basehttp 8724 4212 "GET /static/images/slide04.jpg HTTP/1.1" 200 29641
+INFO 2019-07-29 23:56:35,551 basehttp 8724 9904 "GET /static/images/adv01.jpg HTTP/1.1" 200 61662
+INFO 2019-07-29 23:56:35,860 basehttp 8724 6824 "GET /static/images/adv02.jpg HTTP/1.1" 200 88902
+INFO 2019-07-29 23:56:35,872 basehttp 8724 7460 "GET /static/images/icons.png HTTP/1.1" 200 5931
+INFO 2019-07-29 23:56:36,944 basehttp 8724 9164 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-29 23:56:37,247 basehttp 8724 13468 "GET /static/css/table.css HTTP/1.1" 200 2271
+INFO 2019-07-29 23:58:33,588 basehttp 8724 10728 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-29 23:58:33,630 basehttp 8724 13904 "GET /static/css/table.css HTTP/1.1" 200 2290
+INFO 2019-07-29 23:59:30,666 basehttp 8724 13428 "GET /report/bitest/ HTTP/1.1" 200 3432
+INFO 2019-07-29 23:59:30,693 basehttp 8724 2500 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:00:08,926 basehttp 8724 14528 "GET /report/bitest/ HTTP/1.1" 200 3404
+INFO 2019-07-30 00:00:08,957 basehttp 8724 9524 "GET /static/css/table.css HTTP/1.1" 200 2252
+INFO 2019-07-30 00:01:08,920 basehttp 8724 12836 "GET /report/bitest/ HTTP/1.1" 200 3408
+INFO 2019-07-30 00:01:08,939 basehttp 8724 7660 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:01:30,650 basehttp 8724 9972 "GET /report/bitest/ HTTP/1.1" 200 3410
+INFO 2019-07-30 00:01:30,666 basehttp 8724 7584 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:02:04,126 basehttp 8724 7796 "GET /report/bitest/ HTTP/1.1" 200 3414
+INFO 2019-07-30 00:02:04,159 basehttp 8724 13980 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:02:15,223 basehttp 8724 9600 "GET /report/bitest/ HTTP/1.1" 200 3417
+INFO 2019-07-30 00:02:16,977 basehttp 8724 6064 "GET /report/bitest/ HTTP/1.1" 200 3417
+INFO 2019-07-30 00:02:16,991 basehttp 8724 13236 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:02:32,154 basehttp 8724 2028 "GET /report/bitest/ HTTP/1.1" 200 3417
+INFO 2019-07-30 00:02:32,171 basehttp 8724 5952 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:02:43,324 basehttp 8724 9728 "GET /report/bitest/ HTTP/1.1" 200 3417
+INFO 2019-07-30 00:02:43,356 basehttp 8724 7388 "GET /static/css/table.css HTTP/1.1" 200 2252
+INFO 2019-07-30 00:03:28,564 basehttp 8724 11276 "GET /report/bitest/ HTTP/1.1" 200 3405
+INFO 2019-07-30 00:03:28,579 basehttp 8724 11288 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:04:50,024 basehttp 8724 4652 "GET /report/bitest/ HTTP/1.1" 200 3405
+INFO 2019-07-30 00:04:50,051 basehttp 8724 4080 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:06:14,543 basehttp 8724 14532 "GET /report/bitest/ HTTP/1.1" 200 3403
+INFO 2019-07-30 00:06:14,576 basehttp 8724 10072 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:06:37,602 basehttp 8724 2952 "GET /report/bitest/ HTTP/1.1" 200 3403
+INFO 2019-07-30 00:07:05,641 basehttp 8724 7288 "GET /report/bitest/ HTTP/1.1" 200 3404
+INFO 2019-07-30 00:07:05,658 basehttp 8724 13736 "GET /static/css/table.css HTTP/1.1" 200 2252
+INFO 2019-07-30 00:07:31,344 basehttp 8724 14228 "GET /report/bitest/ HTTP/1.1" 200 3406
+INFO 2019-07-30 00:07:31,368 basehttp 8724 11056 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:08:28,564 basehttp 8724 1824 "GET /report/bitest/ HTTP/1.1" 200 3406
+INFO 2019-07-30 00:08:28,593 basehttp 8724 6908 "GET /static/css/table.css HTTP/1.1" 200 2282
+INFO 2019-07-30 00:09:03,569 basehttp 8724 204 "GET /report/bitest/ HTTP/1.1" 200 3405
+INFO 2019-07-30 00:09:03,591 basehttp 8724 6520 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:09:26,505 views 8724 9312 test
+INFO 2019-07-30 00:09:26,505 views 8724 9312 test
+INFO 2019-07-30 00:09:26,506 views 8724 9312 b''
+INFO 2019-07-30 00:09:26,506 views 8724 9312 b''
+INFO 2019-07-30 00:09:26,535 basehttp 8724 9312 "GET / HTTP/1.1" 200 6393
+INFO 2019-07-30 00:09:26,551 basehttp 8724 11280 "GET /static/css/reset.css HTTP/1.1" 200 664
+INFO 2019-07-30 00:09:26,740 basehttp 8724 1312 "GET /static/css/main.css HTTP/1.1" 200 25066
+WARNING 2019-07-30 00:09:26,868 basehttp 8724 4180 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-30 00:09:26,871 basehttp 8724 9368 "GET /static/js/jquery-ui.min.js HTTP/1.1" 200 71001
+INFO 2019-07-30 00:09:26,872 basehttp 8724 3680 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97168
+INFO 2019-07-30 00:09:26,872 basehttp 8724 9196 "GET /static/js/slide.js HTTP/1.1" 200 2473
+INFO 2019-07-30 00:09:26,874 basehttp 8724 6388 "GET /static/images/logo.png HTTP/1.1" 200 56559
+INFO 2019-07-30 00:09:27,049 basehttp 8724 14560 "GET /static/images/icons.png HTTP/1.1" 200 5931
+INFO 2019-07-30 00:09:27,198 basehttp 8724 3524 "GET /static/images/banner01.jpg HTTP/1.1" 200 17575
+INFO 2019-07-30 00:09:27,215 basehttp 8724 10036 "GET /static/images/slide02.jpg HTTP/1.1" 200 29641
+INFO 2019-07-30 00:09:27,215 basehttp 8724 12516 "GET /static/images/slide.jpg HTTP/1.1" 200 46959
+INFO 2019-07-30 00:09:27,223 basehttp 8724 5972 "GET /static/images/slide03.jpg HTTP/1.1" 200 131141
+INFO 2019-07-30 00:09:27,224 basehttp 8724 6592 "GET /static/images/slide04.jpg HTTP/1.1" 200 29641
+INFO 2019-07-30 00:09:27,357 basehttp 8724 5272 "GET /static/images/adv01.jpg HTTP/1.1" 200 61662
+INFO 2019-07-30 00:09:27,507 basehttp 8724 7984 "GET /static/images/adv02.jpg HTTP/1.1" 200 88902
+INFO 2019-07-30 00:09:45,262 basehttp 8724 14132 "GET /home/more/1/ HTTP/1.1" 200 185
+WARNING 2019-07-30 00:09:47,676 basehttp 8724 8988 "GET /static/css/bulma.css HTTP/1.1" 404 1663
+INFO 2019-07-30 00:09:48,680 basehttp 8724 11236 "GET /report/bitest/ HTTP/1.1" 200 3405
+INFO 2019-07-30 00:09:48,982 basehttp 8724 5448 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:10:16,705 basehttp 8724 13456 "GET /home/more/1/ HTTP/1.1" 200 185
+INFO 2019-07-30 00:10:19,497 basehttp 8724 10772 "GET /report/bitest/ HTTP/1.1" 200 3405
+INFO 2019-07-30 00:10:19,513 basehttp 8724 14284 "GET /static/css/table.css HTTP/1.1" 304 0
+INFO 2019-07-30 00:10:44,036 basehttp 8724 11568 "GET /home/more/1/ HTTP/1.1" 200 185
+INFO 2019-07-30 00:10:48,643 basehttp 8724 248 "GET /report/bitest/ HTTP/1.1" 200 3405
+INFO 2019-07-30 00:10:48,656 basehttp 8724 14992 "GET /static/css/table.css HTTP/1.1" 304 0

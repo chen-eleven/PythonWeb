@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js 
+	<script src="echarts.min.js"></script>
+	-->
+    
+	<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+		<h2>Modbus Protocol Data</h1>
+		<table class="Modbus">
+			<thead>
+			<tr>
+				<th>Num</th>
+				<th>Address</th>
+				<th>Type</th>
+				<th>Data</th>
+			</tr>	
+			</thead>
+			<tr>
+				<td class="item1">1</td>
+				<td class="item2">0x01</td>
+				<td class="item3">unsigned int</td>
+				<td class="item4">0x0001</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>0x02</td>
+				<td>unsigned int</td>
+				<td>0x0002</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>0x03</td>
+				<td>unsigned int</td>
+				<td>0x0003</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>0x04</td>
+				<td>unsigned int</td>
+				<td>0x0004</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>0x05</td>
+				<td>unsigned int</td>
+				<td>0x0005</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>0x06</td>
+				<td>double</td>
+				<td>0x0005</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>0x08</td>
+				<td>double</td>
+				<td>0x0006</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>0x10</td>
+				<td>double</td>
+				<td>0x0008</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>0x12</td>
+				<td>double</td>
+				<td>0x0009</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>0x14</td>
+				<td>double</td>
+				<td>0x0010</td>
+			</tr>				
+            <tr>
+				<td>test合并</td>
+				<td>汇总</td>
+				<td  colspan="2">double</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>0x14</td>
+				<td>double</td>
+				<td>0x0010</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>0x12</td>
+				<td bgcolor="yellow" rowspan="2">double</td>
+				<td>0x0009</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>0x12</td>
+				<td>0x0009</td>
+			</tr>              
+		</table>
+		
+    <div id="bartu" style="width:800px;height:400px; margin:100px auto "></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('bartu'));
+
+        // 指定图表的配置项和数据
+        var option = {
+
+			title : {
+				text: "{{a}}",
+				subtext: '数据来自网络'
+			},
+			tooltip : {
+				trigger: 'axis'
+			},
+			legend: {
+				data:['2011年', '2012年']
+			},
+			toolbox: {
+				show : true,
+				feature : {
+					mark : {show: true},
+					dataView : {show: true, readOnly: false},
+					magicType: {show: true, type: ['line', 'bar']},
+					restore : {show: true},
+					saveAsImage : {show: true}
+				}
+			},
+			calculable : true,
+			xAxis : [
+				{
+					type : 'value',
+					boundaryGap : [0, 0.01]
+				}
+			],
+			yAxis : [
+				{
+					type : 'category',
+					data : ['巴西','印尼','美国','印度','中国','世界人口(万)']
+				}
+			],
+			series : [
+				{
+					name:'2011年',
+					type:'bar',
+<!-- 					data:[18203, 23489, 29034, 104970, 131744, 630230] -->
+					data:{{data18}}
+				},
+				{
+					name:'2012年',
+					type:'bar',
+					data:[19325, 23438, 31000, 121594, 134141, 381807]
+				}
+			]
+		};
+       
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

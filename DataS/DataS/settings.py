@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
+    'report.apps.ReportConfig',
     'users.templatetags.filters',
     'tinymce',
     'haystack',
