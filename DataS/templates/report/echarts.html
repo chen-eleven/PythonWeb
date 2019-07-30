@@ -13,7 +13,29 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-		<h2>Modbus Protocol Data</h1>
+    <div class="time_form">
+    	<h2>Modbus Protocol Data</h1>
+        <form method="post" action="/report/runtime/">
+            {% csrf_token %}
+        <ul>
+            <li>
+                <label>开始时间:</label>
+                <input type="date" value={{start_time}} name="start_time" id="start_time">
+                <span class="error_tip"></span>
+            </li>
+            <li>
+                <label>结束时间:</label>
+                <input type="date" value={{stop_time}} name="stop_time" id="stop_time">
+                <span class="error_tip"></span>
+            </li>	            
+            <li class="reg_sub">
+                <input type="submit" value="盘 他" name="">
+                {{errmsg}}
+            </li>
+        </ul>
+        </form>
+    </div>
+
 		<table class="Modbus">
 			<thead>
 			<tr>
@@ -58,53 +80,7 @@
 				<td>0x06</td>
 				<td>double</td>
 				<td>0x0005</td>
-			</tr>
-			<tr>
-				<td>7</td>
-				<td>0x08</td>
-				<td>double</td>
-				<td>0x0006</td>
-			</tr>
-			<tr>
-				<td>8</td>
-				<td>0x10</td>
-				<td>double</td>
-				<td>0x0008</td>
-			</tr>
-			<tr>
-				<td>9</td>
-				<td>0x12</td>
-				<td>double</td>
-				<td>0x0009</td>
-			</tr>
-			<tr>
-				<td>10</td>
-				<td>0x14</td>
-				<td>double</td>
-				<td>0x0010</td>
-			</tr>				
-            <tr>
-				<td>test合并</td>
-				<td>汇总</td>
-				<td  colspan="2">double</td>
-			</tr>
-			<tr>
-				<td>10</td>
-				<td>0x14</td>
-				<td>double</td>
-				<td>0x0010</td>
-			</tr>
-			<tr>
-				<td>9</td>
-				<td>0x12</td>
-				<td bgcolor="yellow" rowspan="2">double</td>
-				<td>0x0009</td>
-			</tr>
-			<tr>
-				<td>9</td>
-				<td>0x12</td>
-				<td>0x0009</td>
-			</tr>              
+			</tr>          
 		</table>
 		
     <div id="bartu" style="width:800px;height:400px; margin:100px auto "></div>
@@ -159,8 +135,7 @@
 					name:'2012年',
 					type:'bar',
 					data:[19325, 23438, 31000, 121594, 134141, 381807]
-				}
-			]
+				}]
 		};
        
 

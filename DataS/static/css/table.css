@@ -7,14 +7,17 @@ body
 	width: 100%;                                         /*设置页面宽度占浏览器大小的40%*/
 	margin: 60px auto;                                  /*页面自适应居中*/
 }
- 
 
+/*设置时间控件*/ 
+.time_form{width: 300px;
+	float: right;margin-right: 0px}
 table
 {
-	width: 40%;                                        /*表格占据整个页面*/
+	width: 400px;                                        /*表格占据整个页面*/
 	border-spacing: 0;                                  /*单元格边框间距为0*/
 	box-shadow: 0 1px 1px #ccc;                         /*设置表格外边框阴影,有立体感*/
-		margin: 60px auto;        
+		margin: 60px auto; 
+		clear:both;       
 }
  
 .Modbus
