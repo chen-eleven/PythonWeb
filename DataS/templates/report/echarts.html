@@ -63,80 +63,89 @@
 				<td>unsigned int</td>
 				<td>0x0003</td>
 			</tr>
+
+			{% for i in data2 %}
 			<tr>
-				<td>4</td>
-				<td>0x04</td>
-				<td>unsigned int</td>
-				<td>0x0004</td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>0x05</td>
-				<td>unsigned int</td>
-				<td>0x0005</td>
-			</tr>
-			<tr>
-				<td>6</td>
-				<td>0x06</td>
-				<td>double</td>
-				<td>0x0005</td>
-			</tr>          
+				<td>{{i.time}}</td>
+				<td>{{i.num}}</td>
+				<td>{{i.type}}</td>
+				<td>{{i.data}}</td>
+			</tr> 				
+			{% endfor %}
 		</table>
 		
     <div id="bartu" style="width:800px;height:400px; margin:100px auto "></div>
+	{{data3.time}}
+	[{%for i in data5 %} '{{i}}', {% endfor %}]
+    <div id="zoushi" style="width:800px;height:400px; margin:100px auto "></div>	
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('bartu'));
 
         // 指定图表的配置项和数据
-        var option = {
 
-			title : {
-				text: "{{a}}",
-				subtext: '数据来自网络'
-			},
-			tooltip : {
-				trigger: 'axis'
-			},
-			legend: {
-				data:['2011年', '2012年']
-			},
-			toolbox: {
-				show : true,
-				feature : {
-					mark : {show: true},
-					dataView : {show: true, readOnly: false},
-					magicType: {show: true, type: ['line', 'bar']},
-					restore : {show: true},
-					saveAsImage : {show: true}
-				}
-			},
-			calculable : true,
-			xAxis : [
-				{
-					type : 'value',
-					boundaryGap : [0, 0.01]
-				}
-			],
-			yAxis : [
-				{
-					type : 'category',
-					data : ['巴西','印尼','美国','印度','中国','世界人口(万)']
-				}
-			],
-			series : [
-				{
-					name:'2011年',
-					type:'bar',
-<!-- 					data:[18203, 23489, 29034, 104970, 131744, 630230] -->
-					data:{{data18}}
-				},
-				{
-					name:'2012年',
-					type:'bar',
-					data:[19325, 23438, 31000, 121594, 134141, 381807]
-				}]
-		};
+var option = {
+    tooltip : {
+        trigger: 'axis'
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    legend: {
+        data: [{%for i in data5 %} '{{i}}', {% endfor %}]
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : [{%for i in data3.time %} '{{i}}', {% endfor %}]
+
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            name : '{{data7}}',
+            axisLabel : {
+                formatter: '{value} ml'
+            }
+        },
+        {
+            type : 'value',
+            name : '温度',
+            axisLabel : {
+                formatter: '{value} °C'
+            }
+        }
+    ],
+    series : [
+
+        {
+            name:'蒸发量',
+            type:'bar',
+            data:{{data3.num}}
+        },
+        {
+            name:'降水量',
+            type:'bar',
+            data:{{data3.type}}
+        },
+        {
+            name:'平均温度',
+            type:'line',
+            yAxisIndex: 1,
+            data:{{data3.data}}
+        }
+    ]
+};
+                    
        
 
         // 使用刚指定的配置项和数据显示图表。

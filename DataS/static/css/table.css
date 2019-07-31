@@ -79,7 +79,7 @@ table
 /*分别设置每一行中单元格的宽度*/
 .item1
 {
-	width: 10%;
+	width: 30%;
 }
  
 .item2
@@ -88,7 +88,7 @@ table
 }
 .item3
 {
-	width: 50%;
+	width: 30%;
 }
 .item4
 {
