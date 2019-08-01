@@ -78,17 +78,17 @@
 
 			<div class="pagenation">
                 {% if tables_li.has_previous %}
-				    <a href="/list/{{ type_id }}/{{ tables_li.previous_page_number }}/?sort={{ sort }}"><上一页</a>
+				    <a href="/list/{{ db_type }}/{{db_name}}/{{ tables_li.previous_page_number }}/?sort={{ sort }}"><上一页</a>
                 {% endif %}
                 {% for pindex in pages %}
                     {% if pindex == tables_li.number %}
-                        <a href="/list/{{ type_id }}/{{ pindex }}/?sort={{ sort }}" class="active">{{ pindex }}</a>
+                        <a href="/list/{{ db_type }}/{{db_name}}/{{ pindex }}/" class="active">{{ pindex }}</a>
                     {% else %}
-                        <a href="/list/{{ type_id }}/{{ pindex }}/?sort={{ sort }}">{{ pindex }}</a>
+                        <a href="/list/{{ db_type }}/{{db_name}}/{{ pindex }}/">{{ pindex }}</a>
                     {% endif %}
                 {% endfor %}
                 {% if tables_li.has_next %}
-				    <a href="/list/{{ type_id }}/{{ tables_li.next_page_number }}/?sort={{ sort }}">下一页></a>
+				    <a href="/list/{{ db_type }}/{{db_name}}/{{ tables_li.next_page_number }}/?sort={{ sort }}">下一页></a>
                 {% endif %}
 			</div>
 		</div>

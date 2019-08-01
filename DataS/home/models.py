@@ -79,7 +79,7 @@ class Tables(BaseModel):
 
     table_id = models.IntegerField(verbose_name='表id',primary_key=True)    
     table_name =models.CharField(max_length=50, verbose_name='表名')
-    db_name = models.CharField(max_length=10,verbose_name='表的库名')        
+    db_name = models.CharField(max_length=30,verbose_name='表的库名')        
     table_type = models.CharField(default=None, max_length=10, verbose_name='表业务类型')
     db_type = models.CharField(default='other',max_length=10, choices=dbType_choices, verbose_name='数据库类型')
     desc = models.CharField(max_length=128, verbose_name='表的简介')

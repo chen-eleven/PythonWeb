@@ -115,6 +115,7 @@ def list(request, db_type, db_name, page):
 
     # 返回值是一个Page类的实例对象
     tables_li = paginator.page(page)
+    print(tables_li)
 
     # 进行页码控制
     # 1.总页数<5, 显示所有页码
