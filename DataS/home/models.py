@@ -80,7 +80,7 @@ class Tables(BaseModel):
     table_id = models.IntegerField(verbose_name='表id',primary_key=True)    
     table_name =models.CharField(max_length=50, verbose_name='表名')
     db_name = models.CharField(max_length=10,verbose_name='表的库名')        
-    table_type = models.CharField(default='other', max_length=10, verbose_name='表业务类型')
+    table_type = models.CharField(default=None, max_length=10, verbose_name='表业务类型')
     db_type = models.CharField(default='other',max_length=10, choices=dbType_choices, verbose_name='数据库类型')
     desc = models.CharField(max_length=128, verbose_name='表的简介')
     
@@ -106,16 +106,16 @@ class TableDetails(BaseModel):
     """子级表详细信息"""
     #table_id = models.IntegerField( verbose_name='tableid', )
     table_id = models.ForeignKey(Tables, verbose_name='tableid', on_delete=models.CASCADE)
-    clo_id = models.SmallIntegerField( verbose_name='列id')
-    clo_name = models.CharField(max_length=20,verbose_name='列名')
-    field_type = models.CharField(max_length=10,verbose_name='字段类型')
+    clo_id = models.IntegerField(default=None, verbose_name='列id')
+    clo_name = models.CharField(default=None, max_length=50,verbose_name='列名')
+    field_type = models.CharField(default=None, max_length=150,verbose_name='字段类型')
     level = models.SmallIntegerField(default=0, verbose_name='字段等级,默认0普通')
-    comment = models.CharField(max_length=128, verbose_name='表的简介')
+    comment = models.CharField(default=None, max_length=600, verbose_name='表的简介')
     
     objects = TableDetailsManager()
     
     def __str__(self):
-        return str(self.table_id)
+        return str(self.table_id)    # 必须返回string
     
     class Meta:
         db_table = 's_table_details'

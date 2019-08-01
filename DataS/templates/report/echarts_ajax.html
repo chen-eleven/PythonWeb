@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js 
+	<script src="echarts.min.js"></script>
+	-->
+    
+	<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+    <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    $(function () {
+        $('#timesubmit').click(function () {
+            location.href = 'http://www.baidu.com'
+            // 获取用户名和密码
+            sta_time = $('#start_time').val()
+            sto_time = $('#stop_time').val()
+            csrf = $('input[name="csrfmiddlewaretoken"]').val()
+            // 发起ajax请求
+            params = {
+            	'sta_time': sta_time,
+            	'sto_time': sto_time,
+                'csrfmiddlewaretoken': csrf,
+            }
+            console.log('params: ', params)
+            $.post('/report/echartsapi/', params, function (data) {
+                // 用户名密码错误 {'res':0}
+                // 登录成功 {'res':1}
+                console.log('data: ', data)
+                $('#username').next().html('用户名或密码错误').show()
+
+                var myChart = echarts.init(document.getElementById('bartu'));
+
+                // 指定图表的配置项和数据
+                var option = {
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType: {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    legend: {
+                        data: ['蒸发量','降水量','平均温度']
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : data.date3.time
+
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name : 'shidu',
+                            axisLabel : {
+                                formatter: '{value} ml'
+                            }
+                        },
+                        {
+                            type : 'value',
+                            name : '温度',
+                            axisLabel : {
+                                formatter: '{value} °C'
+                            }
+                        }
+                    ],
+                    series : [
+
+                        {
+                            name:'蒸发量',
+                            type:'bar',
+                            data:data.data3.num
+                        },
+                        {
+                            name:'降水量',
+                            type:'bar',
+                            data:data.data3.type
+                        },
+                        {
+                            name:'平均温度',
+                            type:'line',
+                            yAxisIndex: 1,
+                            data:[123,32,445,6667,678]
+                        }
+                    ]
+                };
+                                  
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+                $('#username').next().html('用户名或密码错误').show()
+                
+    
+
+            })
+        })
+    })     
+</script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div class="time_form">
+    	<h2>Modbus Protocol Data</h1>
+        <div class="form_input">
+            {% csrf_token %}
+             <ul>
+                <li>
+                    <input type="text" id="username" class="name_input" value="{{ username }}" placeholder="请输入用户名">
+					<div class="user_error">输入错误</div>
+                </li>
+                <li>
+                    <label>开始时间:</label>
+                    <input type="date" value={{start_time}} name="start_time" id="start_time">
+                    <span class="error_tip"></span>
+                </li>
+                <li>
+                    <label>结束时间:</label>
+                    <input type="date" value={{stop_time}} name="stop_time" id="stop_time">
+                    <span class="error_tip"></span>
+                </li>	            
+                <li class="reg_sub">
+                    <input type="button" id="timesubmit" value="盘 他" name="">
+                    {{errmsg}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+		<table class="Modbus">
+			<thead>
+			<tr>
+				<th>Num</th>
+				<th>Address</th>
+				<th>Type</th>
+				<th>Data</th>
+			</tr>	
+			</thead>
+			<tr>
+				<td class="item1">1</td>
+				<td class="item2">0x01</td>
+				<td class="item3">unsigned int</td>
+				<td class="item4">0x0001</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>0x02</td>
+				<td>unsigned int</td>
+				<td>0x0002</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>0x03</td>
+				<td>unsigned int</td>
+				<td>0x0003</td>
+			</tr>
+
+			{% for i in data2 %}
+			<tr>
+				<td>{{i.time}}</td>
+				<td>{{i.num}}</td>
+				<td>{{i.type}}</td>
+				<td>{{i.data}}</td>
+			</tr> 				
+			{% endfor %}
+		</table>
+		
+    <div id="bartu" style="width:800px;height:400px; margin:100px auto "></div>
+	{{data3.time}}
+	[{%for i in data5 %} '{{i}}', {% endfor %}]
+    <div id="ajax" style="width:800px;height:400px; margin:100px auto "></div>	
+
+</body>
+</html>

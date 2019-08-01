@@ -27,9 +27,11 @@ def index(request):
             'report_table_hot' : report_table_hot,
             }
        
-    # 使用loger session 
-    logger.info(request.session['username'])
-    logger.info(request.body)
+    # 使用loger session  这里会导致注册的时候要打印报错
+# =============================================================================
+# #    logger.info(request.session['username'])
+# #    logger.info(request.body)
+# =============================================================================
 
     return render(request, 'home/index.html', context)
 
@@ -100,7 +102,7 @@ def list(request, db_type, db_name, page):
     # 获取去重的所有库名，列在list页左边
     db_name_all = Tables.objects.get_db_name_all(db_type)
     # 分页
-    paginator = Paginator(books_li, 10)
+    paginator = Paginator(books_li, 100)
 
     # 获取分页之后的总页数
     num_pages = paginator.num_pages

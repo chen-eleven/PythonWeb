@@ -12,5 +12,6 @@ from report import views
 app_name='report'
 urlpatterns = [
     path('bitest/', views.bar, name='bar'),    # 柱状图
-    path('runtime/', views.bar_time_filter, name='runtime')
+    path('runtime/', views.bar_time_filter, name='runtime'),
+    path('echartsapi/', views.ajaxapi, name='ajax')
 ]

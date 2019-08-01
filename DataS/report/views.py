@@ -58,3 +58,17 @@ def bar_time_filter(request):
     print('11111111111111111',data3['address'],type(data3['address']),context['data4'])
     return render(request, 'report/echarts.html', context)
     #return JsonResponse(context)
+    
+def ajaxapi(request):
+    sta_time = request.POST.get('start_time')
+    sto_time = request.POST.get('stop_time')
+    print('----------------',sta_time)  
+    data = pandas.read_excel('templates/report/data.xls')
+    data['time'] = data['time'].dt.strftime('%Y-%m-%d')
+    data =  data[(data['time']>= sta_time) & (data['time']<= sto_time)]
+    data3 = data.to_dict(orient='list')
+    print(data3)
+    context = {
+            'data3' : data3,
+            }
+    return JsonResponse(context)
