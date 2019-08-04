@@ -4,6 +4,7 @@ from django_redis import get_redis_connection
 
 from .models import HotTables
 from .models import Tables,TableDetails
+from comments.models import CommentPlus
 from django.views.decorators.cache import cache_page
 from utils.decorators import login_required
 import logging
@@ -42,6 +43,9 @@ def detail(request, table_id):
     clos = TableDetails.objects.get_table_by_id(table_id=table_id)
     table = Tables.objects.get_table_by_id(table_id=table_id)[0]
     
+    # 获取评论
+    comms = CommentPlus.objects.get_comm_by_id(table_id=table_id)
+    
     #将颜色标签替换掉
     clos_tmp = []
     for i in clos:
@@ -75,7 +79,7 @@ def detail(request, table_id):
     
 
     # 定义上下文
-    context = {'clos': clos_tmp, 'table':table}
+    context = {'clos': clos_tmp, 'table':table, 'comms':comms}
 
     # 使用模板
     return render(request, 'home/detail.html', context)

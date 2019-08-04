@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body %}
+<form method="POST" action="{% url "comment:submit" %}">
+    {% csrf_token %}
+<div class="box">
+    <div class="field">
+        <label class="label">{{ book.name }}</label>
+    </div>
+    <div class="field">
+    <label class="label">评论内容</label>
+    <div class="control">
+        <textarea class="textarea" placeholder="评论内容" name="content"></textarea>
+    </div>
+    </div>
+    
+    <div class="field is-grouped">
+        <div class="control">
+            <input type="submit" class="button is-link" value="提交">
+        </div>
+    </div>
+</div>
+</form>
+{% endblock %}
+{% block bottomfiles %}
+{% endblock %}

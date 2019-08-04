@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
     'report.apps.ReportConfig',
+    'comments.apps.CommentsConfig',
     'users.templatetags.filters',
     'tinymce',
     'haystack',

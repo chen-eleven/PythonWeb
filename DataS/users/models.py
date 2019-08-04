@@ -9,7 +9,6 @@ class PassportManager(models.Manager):
             passport = self.create(username=username, password=get_hash(password), email=email)
         except Exception as e:
             print('e: ', e)
-            print('!!!!!xierushibai')
         # 3.返回passport
         return passport
 
