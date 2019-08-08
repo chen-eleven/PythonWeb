@@ -1,0 +1,8 @@
+itsdangerous==0.24
+Django==2.1.2
+django_tinymce==2.7.0
+django_redis==4.10.0
+pandas==0.20.3
+celery==4.3.0
+Pillow==6.1.0
+django_haystack==2.8.1

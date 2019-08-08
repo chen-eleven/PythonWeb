@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}尚硅谷书城-书籍搜索结果列表{% endblock title %}
+{% block body %}
+    <div class="breadcrumb">
+        <a href="#">Topic模型</a>
+        <span>></span>
+        <a href="#">文本关联如下:</a>
+    </div>
+	<div class="lda_model" style="width:1200px; margin:20px auto; text-align=center; font-size:16px; ">
+		<h2>正面情绪</h2>
+		<ul style="margin:10px auto">
+		{% for pos_i in pos %}
+		<li style="margin:5px auto">{{pos_i}}</li>
+		{% endfor %}
+		</ul>
+		<h2>负面情绪</h2>
+		<ul style="margin:10px auto">
+		{% for neg_i in neg %}
+		<li style="margin:5px auto">{{neg_i}}</li>
+		{% endfor %}
+		</ul>
+	</div>
+	<div class="wordcloud" style="width:1200px; margin:20px auto">
+		<img src ="{% static 'nlp/19th.png' %}" style="width:800px;margin-left:200px "> 
+	</div>
+	
+
+{% endblock body %}

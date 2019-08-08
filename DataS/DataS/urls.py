@@ -23,4 +23,5 @@ urlpatterns = [
     path('comments/', include('comments.urls', namespace='comment')),
     re_path(r'^search/', include('haystack.urls')),
     path('report/', include('report.urls', namespace='report')),
+    path('nlp/', include('nlp.urls', namespace='nlp')),
 ]
