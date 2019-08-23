@@ -57,9 +57,9 @@
 
 		<div class="r_wrap fr clearfix">
 			<div class="sort_bar">
-				<a href="/list/{{ type_id }}/1/" {% if sort == 'default' %}class="active"{% endif %}>默认</a>
-				<a href="/list/{{ type_id }}/1/?sort=price" {% if sort == 'table_name' %}class="active"{% endif %}>表名</a>
-				<a href="/list/{{ type_id }}/1/?sort=hot" {% if sort == 'hot' %}class="active"{% endif %}>点击</a>
+				<a href="#" {% if sort == 'default' %}class="active"{% endif %}>默认</a>
+				<a href="#" {% if sort == 'table_name' %}class="active"{% endif %}>表名</a>
+				<a href="#" {% if sort == 'hot' %}class="active"{% endif %}>点击</a>
 			</div>
 
 			<ul class="book_type_list clearfix">
@@ -68,7 +68,7 @@
                         <a href="{#% url 'books:detail' books_id=book.id %#}"></a>
                         <h4><a href="{% url 'home:detail' table_id=table_i.table_id %}">{{ table_i.table_name }}</a></h4>
                         <div class="operate">
-                            <span class="prize">${{ table_i.desc }}</apan>
+                            <span class="prize">{{ table_i.desc }}</apan>
                             <span class="unit">{{ table_i.debug }}</span>
                             <a href="#" class="add_books" title="加入购物车"></a>
                         </div>

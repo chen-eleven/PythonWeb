@@ -30,6 +30,9 @@
 				else if (data.res == 2){
                     $('#username').next().html('验证码错误').show()
                 }
+				else if (data.res == 3){
+                    $('#username').next().html('账号未激活,请联系开发者').show()
+                }                
                 else
                 {
                     // 跳转页面
@@ -45,7 +48,7 @@
 {% block body %}
 <body>
 	<div class="login_top clearfix">
-		<a href="index.html" class="login_logo"><img src="{% static 'images/logo.png' %}" style="width: 160px; height: 53px;"></a>
+		<a href="#" class="login_logo"><img src="{% static 'images/logo.png' %}" style="width: 160px; height: 53px;"></a>
 	</div>
 
 	<div class="login_form_bg">
@@ -63,9 +66,9 @@
 					<div class="user_error">输入错误</div>
 					<input type="password" id="pwd" class="pass_input" placeholder="请输入密码">
 					<div class="pwd_error">输入错误</div>
-					<div style="top: 100px; position: absolute;">
+					<div style="top: 100px; position: absolute; ">
 						<input type="text" id="vc" name="vc">
-						<img id='verifycode' src="/user/verifycode/" alt="CheckCode"/>
+						<img id='verifycode' src="/user/verifycode/" alt="CheckCode" >
 					</div>
 					<div class="more_input clearfix">
 						<input type="checkbox" name="remember" {{ checked }}>

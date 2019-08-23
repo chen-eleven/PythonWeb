@@ -106,22 +106,25 @@ def login_check(request):
         #     next_url = request.session.get('url_path')
         # else:
         #     next_url = reverse('books:index')
-        next_url = reverse('home:index') # /user/
-        jres = JsonResponse({'res': 1, 'next_url': next_url})
-
-        # 判断是否需要记住用户名
-        if remember == 'true':
-            # 记住用户名
-            jres.set_cookie('username', username, max_age=7*24*3600)
+        if passport.is_active:
+            next_url = reverse('home:index') # /user/
+            jres = JsonResponse({'res': 1, 'next_url': next_url})
+        
+            # 判断是否需要记住用户名
+            if remember == 'true':
+                # 记住用户名
+                jres.set_cookie('username', username, max_age=7*24*3600)
+            else:
+                # 不要记住用户名
+                jres.delete_cookie('username')
+        
+            # 记住用户的登录状态
+            request.session['islogin'] = True
+            request.session['username'] = username
+            request.session['passport_id'] = passport.id
+            return jres
         else:
-            # 不要记住用户名
-            jres.delete_cookie('username')
-
-        # 记住用户的登录状态
-        request.session['islogin'] = True
-        request.session['username'] = username
-        request.session['passport_id'] = passport.id
-        return jres
+            return JsonResponse({'res': 3})    # 没激活
     else:
         # 用户名或密码错误
         return JsonResponse({'res': 0})
