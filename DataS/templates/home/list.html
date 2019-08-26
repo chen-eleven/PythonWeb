@@ -14,15 +14,17 @@
 					<li><a href="{% url 'home:list' db_type='hive' db_name='da' page=1 %}" class="model1">Hive数据库</a></li>
 					<li><a href="{% url 'home:list' db_type='mysql' db_name='ad' page=1 %}" class="model2">Mysql数据库</a></li>
 					<li><a href="{% url 'home:list' db_type='otherdb' db_name='debug' page=1 %}" class="model3">Other数据库</a></li>
+					<!--
 					<li><a href="#" class="model4">业务块4</a></li>
 					<li><a href="#" class="model5">业务块5</a></li>
 					<li><a href="#" class="model6">业务块6</a></li>
+					-->
 				</ul>
 			</div>
 			<ul class="navlist fl">
 				<li><a href={% url 'home:index'%}>首页</a></li>
 				<li class="interval">|</li>
-				<li><a href="">链接1</a></li>
+				<li><a href="http://localhost:8000/admin/">后台管理</a></li>
 				<li class="interval">|</li>
 				<li><a href="">链接2</a></li>
 			</ul>

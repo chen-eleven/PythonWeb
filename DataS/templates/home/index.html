@@ -11,7 +11,7 @@
 			<ul class="navlist fl">
 				<li><a href="">首页</a></li>
 				<li class="interval">|</li>
-				<li><a href="">链接2</a></li>
+				<li><a href="/admin/">后台管理</a></li>
 				<li class="interval">|</li>
 				<li><a href="">链接3</a></li>
 			</ul>
@@ -20,8 +20,8 @@
 
 	<div class="center_con clearfix">
 		<ul class="subnav fl">
-			<li><a href="{% url 'home:list' db_type='hive' db_name='da' page=1 %}" class="model1">数据字典系统</a></li>
-			<li><a href="{% url 'report:bar' %}" class="model2">数据可视系统</a></li>
+			<li><a href="{% url 'home:list' db_type='hive' db_name='debug' page=1 %}" class="model1">数据字典系统</a></li>
+			<li><a href="{% url 'home:more' code=1 %}" class="model2">数据可视系统</a></li>
 			<li><a href="{% url 'home:more' code=1 %}" class="model3">智能推荐系统</a></li>
 			<li><a href="{% url 'nlp:lda' %}" class="model4">文本监控系统</a></li>
 			<li><a href="{% url 'home:more' code=1 %}" class="model5">分群流失系统</a></li>

@@ -25,7 +25,7 @@ SECRET_KEY = '#rig)v^sv$f@($^hnrbl6x(-t21g9o656-xoz--!o)#w6!(#&l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -81,23 +81,23 @@ WSGI_APPLICATION = 'DataS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 's_pert',
-        'USER': 'da_script',
-        'PASSWORD': 'da_script!@#123',
-        'HOST': '10.97.201.9',
-        'PORT': 3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+    # 'default': {
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 's_pert',
+        # 'USER': 'da_script',
+        # 'PASSWORD': 'da_script!@#123',
+        # 'HOST': '10.97.201.9',
+        # 'PORT': 3306,
+    # }
+# }
 
 
 # =============================================================================
