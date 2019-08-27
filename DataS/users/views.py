@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 import re
-from users.models import Passport #, Address
+from users.models import Passport
+from home.models import Tables
 from django.http import HttpResponse, JsonResponse
 from utils.decorators import login_required
 #from order.models import OrderInfo, OrderGoods
@@ -193,3 +194,29 @@ def register_active(request, token):
         # 链接过期
         return HttpResponse('激活链接已过期')
 
+
+@login_required
+def user(request):
+    '''用户中心-信息页'''
+    passport_id = request.session.get('passport_id')
+    # 获取用户的基本信息
+    #addr = Address.objects.get_default_address(passport_id=passport_id)
+    userinfo = Passport.objects.get_info(uid=passport_id)[0]
+    print(userinfo)
+    # 获取用户的最近浏览信息
+    con = get_redis_connection('default')
+    key = 'history_%d' % passport_id
+    # 取出用户最近浏览的5个商品的id
+    history_li = con.lrange(key, 0, 4)
+    # history_li = [21,20,11]
+    # print(history_li)
+    # 查询数据库,获取用户最近浏览的商品信息
+    # books_li = Books.objects.filter(id__in=history_li)
+    
+    tableh_li = []
+    for id in history_li:
+        tableh = Tables.objects.get_table_by_id(table_id=id)[0]
+        tableh_li.append(tableh)
+    return render(request, 'users/user_center_info.html', {'userinfo': userinfo,
+                                                           'page': 'user',
+                                                           'tableh_li': tableh_li})

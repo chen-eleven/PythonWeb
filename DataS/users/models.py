@@ -29,7 +29,10 @@ class PassportManager(models.Manager):
         if passport:
             return True
         return False
-
+    
+    def get_info(self, uid):
+        userinfo = self.filter(id=uid)
+        return userinfo
 # Create your models here.
 class Passport(BaseModel):
     '''用户模型类'''
