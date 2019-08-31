@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 import re
 from users.models import Passport
-from home.models import Tables
+from home.models import Tables,TableCollection
 from django.http import HttpResponse, JsonResponse
 from utils.decorators import login_required
 #from order.models import OrderInfo, OrderGoods
@@ -220,3 +220,16 @@ def user(request):
     return render(request, 'users/user_center_info.html', {'userinfo': userinfo,
                                                            'page': 'user',
                                                            'tableh_li': tableh_li})
+@login_required       
+def collection(request):
+    '''用户收藏页'''
+    username = request.session.get('username')  # 获取用户名
+    context = TableCollection.objects.get_table_by_user(username=username)
+    
+    
+    #return HttpResponse('11')
+    return render(request, 'users/user_center_site.html', context)
+    
+    
+    
+    

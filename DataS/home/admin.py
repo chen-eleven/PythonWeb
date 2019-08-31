@@ -2,13 +2,21 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import HotTables
-from .models import Tables,TableDetails
+from .models import Tables,TableDetails,TableLables,TableCollection
 
 class TablesFilter(admin.ModelAdmin):
     class TableDetailsInline(admin.TabularInline):
         model = TableDetails
-        extra = 5 #默认显示条目的数量
-    inlines = [TableDetailsInline,]    #Inline把BillSubInline关联进来    
+        extra = 5 #默认显示条目的数量\
+        
+    class TableLableInline(admin.TabularInline):
+        model = TableLables
+        extra =1
+    class TableCollectionInline(admin.TabularInline):
+        model = TableCollection
+        extra = 3
+        
+    inlines = [TableLableInline, TableDetailsInline, TableCollectionInline]    #Inline把BillSubInline关联进来    
     list_display = ['table_name','db_name','table_type']
      
     #筛选器
@@ -19,8 +27,11 @@ class TablesFilter(admin.ModelAdmin):
     #ordering设置默认排序字段，负号表示降序排序
     ordering = ['db_name',]
 
-admin.site.register(HotTables)
 admin.site.register(Tables,TablesFilter)
 admin.site.register(TableDetails)
+admin.site.register(TableCollection)
+admin.site.register(HotTables)
+admin.site.register(TableLables)
+
 admin.site.site_header = 'DataShow'
 admin.site.site_title = '矩阵'

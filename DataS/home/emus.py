@@ -24,6 +24,13 @@ tableStatus = {
         0 : '下线',
         1 : '正常',
         2 : '其他异常'}
+partStatus = {
+        0: '无分区',
+        1: '有分区'}
+linkStatus = {
+        'EXTERNAL_TABLE': '外部表',
+        'MANAGED_TABLE': '内部表',
+        }
 
 db_name_all = {
         'hive': ["ad",

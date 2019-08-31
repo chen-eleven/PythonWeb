@@ -46,3 +46,6 @@ class Passport(BaseModel):
 
     class Meta:
         db_table = 's_user_account'
+        
+        
+        

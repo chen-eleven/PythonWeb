@@ -68,11 +68,12 @@
                 {% for table_i in tables_li %}
                     <li>
                         <a href="{#% url 'books:detail' books_id=book.id %#}"></a>
-                        <h4><a href="{% url 'home:detail' table_id=table_i.table_id %}">{{ table_i.table_name }}</a></h4>
+                        <h4><a href="{% url 'home:detail' table_id=table_i.table_id %}" title="{{table_i.table_name}}">
+                        {{ table_i.table_name }}</a></h4>
                         <div class="operate">
                             <span class="prize">{{ table_i.desc }}</apan>
-                            <span class="unit">{{ table_i.debug }}</span>
-                            <a href="#" class="add_books" title="加入购物车"></a>
+                            <!--<span class="unit">{{ table_i.debug }}</span>
+                            <a href="#" class="add_books" title="加入购物车"></a>-->
                         </div>
                     </li>
 				{% endfor %}

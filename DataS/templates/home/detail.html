@@ -8,7 +8,8 @@
 	<div class="navbar_con">
 		<div class="navbar clearfix">
 			<div class="subnav_con fl">
-				<h1>全部模块分类</h1>	
+				<h1><a href="{% url 'home:list' db_type='hive' db_name='all' page=1 %}" 
+					style="color: white">全部模块分类</a></h1>	
 				<span></span>			
 				<ul class="subnav">
 				<!--
@@ -24,7 +25,7 @@
 			<ul class="navlist fl">
 				<li><a href="{% url 'home:index' %}">首页</a></li>
 				<li class="interval">|</li>
-				<li><a href="http://localhost:8000/admin/">后台管理</a></li>
+				<li><a href="http://localhost:8000/admin/">Admin</a></li>
 				<li class="interval">|</li>
 				<li><a href="http://localhost:8000/admin/">Hue</a></li>
 			</ul>
@@ -45,9 +46,27 @@
 			<h3>{{ table.table_name }}</h3>
 			<p>{{ table.desc }}</p>
 			<div class="prize_bar">
+				<div class="table_info1">
 				<span class="show_pirze">库：<em>{{ table.db_name }}</em></span>
 				<span class="show_unit">库类：{{ table.db_type }}</span>
-				<span class="show_unit">业务：{{ table.table_type }}</span>
+				<span class="show_unit">存储类型：{{ table.table_type }}</span>						
+				<span class="show_unit">创建时间：{{ table.create_time }}</span>
+				<span class="show_unit">创建人：{{ table.create_user }}</span>
+				<span class="show_unit">最近修改：{{ table.last_modified_time }} ：{{table.last_modified_by}}</span>
+				<span class="show_unit">有无分区：{{ table.have_part }}</span>				
+				</div>				
+				<div class="table_info1">
+
+				<span class="show_unit">内外表：{{ table.link_type }}</span>
+				<span class="show_unit">最大分区：{{ table.max_part }}</span>						
+				<span class="show_unit">最小分区：{{ table.min_part }}</span>
+				<span class="show_unit">文件个数：{{ table.numfiles }}</span>
+				<span class="show_unit">行记录数：{{ table.numrows }}</span>
+				<span class="show_unit">存储空间：{{ table.totalsize }} M</span>
+				</div>
+				<div class="table_info1">
+				<span class="show_unit">hdfs路径：{{ table.hdfs_path }}</span>
+				</div>
 			</div> 
 		</div>
 
