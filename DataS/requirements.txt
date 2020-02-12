@@ -1,5 +1,5 @@
 itsdangerous==0.24
-Django==2.1.2
+Django==2.2.10
 django_tinymce==2.7.0
 django_redis==4.10.0
 pandas==0.20.3
